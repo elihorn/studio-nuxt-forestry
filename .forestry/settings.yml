@@ -13,9 +13,8 @@ sections:
   match: "**/*"
   templates:
   - blog-post
-- type: document
-  path: content/data/authors.json
-  label: Author List
+- type: heading
+  label: Test heading
 - type: document
   path: content/data/info.json
   label: Info Page
