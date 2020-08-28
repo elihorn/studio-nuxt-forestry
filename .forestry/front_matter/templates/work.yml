@@ -13,4 +13,5 @@ fields:
   config: {}
   label: Media
 pages:
+- Work/test-2.md
 - Work/test.md
