@@ -1,4 +1,18 @@
 ---
 label: Works
 hide_body: false
-fields: []
+display_field: title
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: media
+  type: image_gallery
+  config: {}
+  label: Media
+pages:
+- content/works/test-2.md
+- content/works/test-3.md
+- content/works/test.md
