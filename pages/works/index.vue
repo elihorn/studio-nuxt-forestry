@@ -13,6 +13,7 @@ export default {
       const posts = await $content('works', params.slug)
       .sortBy('date', 'desc')
       .fetch()
+      
       return {
         posts
       }

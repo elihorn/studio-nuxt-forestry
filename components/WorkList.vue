@@ -4,9 +4,10 @@
             <NuxtLink  
                 v-for="post in posts" 
                 :key="post.title" 
-                :to="{ name: 'slug', params: { slug: post.slug } }"
+                :to="{ name: 'work-slug', params: { slug: post.slug } }"
             >
                 <li>
+                    {{ post.slug }}
                     <div class="hero_image">
                         <img :src="post.media" :alt="post.title">
                     </div>
