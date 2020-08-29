@@ -14,13 +14,6 @@ sections:
   templates:
   - works
 - type: directory
-  path: Work
-  label: Work
-  create: all
-  match: "**/*"
-  templates:
-  - work
-- type: directory
   path: content/blog-posts
   label: Blog Posts
   create: documents
