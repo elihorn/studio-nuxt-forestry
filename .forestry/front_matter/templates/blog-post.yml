@@ -4,31 +4,23 @@ hide_body: false
 fields:
 - type: text
   name: title
-  label: title
+  label: Title
   config:
     required: true
   description: Enter title, needs to match filename for routing
-- name: author
-  type: select
-  default: []
-  config:
-    required: true
-    options: []
-    source:
-      type: documents
-      section: author-list
-      file: content/data/authors.json
-      path: authors
-  label: Author
-  description: Select author, to add a new author, go to Authors List
 - type: datetime
   name: date
-  label: date
+  label: Date
   config:
     required: true
 - type: file
   name: hero_image
-  label: hero_image
+  label: Featured image
+- name: slug
+  type: text
+  config:
+    required: false
+  label: Slug
 pages:
 - content/blog-posts/an-essay-on-walking.md
 - content/blog-posts/ne-te-quaesiveris-extra.md
