@@ -13,6 +13,7 @@ fields:
   config: {}
   label: Media
 pages:
+- content/works/another-work.md
 - content/works/test-2.md
 - content/works/test-3.md
 - content/works/test.md
