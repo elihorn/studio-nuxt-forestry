@@ -4,15 +4,14 @@
             <NuxtLink  
                 v-for="post in posts" 
                 :key="post.title" 
-                :to="{ name: 'blog-slug', params: { slug: post.slug } }"
+                :to="{ name: 'slug', params: { slug: post.slug } }"
             >
                 <li>
                     <div class="hero_image">
-                        <img :src="post.hero_image" :alt="post.title">
+                        <img :src="post.media" :alt="post.title">
                     </div>
                     <div class="blogList__info">
                         <h2>{{ post.title }}</h2>
-                        <h3>{{ formatDate(post.date) }}</h3>
                     </div>
                 </li>
             </NuxtLink>                  
@@ -26,18 +25,6 @@
                 type: Array,
                 required: true
             }        
-        }, 
-        methods: {
-            formatDate(date) {
-                return new Date(date).toDateString().slice(4)
-            }, 
-            formatExcerpt(body) {
-                return body.slice(0 , 200).trimEnd()
-            }, 
-            formatSlug(title) {
-                const regex = / /gi;
-                return title.toLowerCase().trim().replace(regex, "-")
-            }
         }
     }
 </script>

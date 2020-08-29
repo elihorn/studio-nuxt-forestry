@@ -2,25 +2,17 @@
 
 <template>
   <div>
-    <BlogList :posts="posts" />
+    <WorkList :posts="posts" />
   </div>
 </template>
 
 <script>
-import BlogList from '~/components/BlogList.vue'
-
 export default {
   layout: 'layout',
-  components: {
-    BlogList
-  },
-  async asyncData() {
-      // create context via webpack to map over all blog posts
-      const allPosts = await require.context("~/content/works/", true, /\.md$/)
-      const posts =  allPosts.keys().map((key) => {
-        // give back the value of each post context
-        return allPosts(key)
-      });
+  async asyncData({ $content, params }) {
+      const posts = await $content('works', params.slug)
+      .sortBy('date', 'desc')
+      .fetch()
       return {
         posts
       }

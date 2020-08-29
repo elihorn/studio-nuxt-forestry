@@ -1,5 +1,6 @@
 ---
 title: Test
+slug: test
 media:
 - "/sharon-mccutcheon-Th_WZMUPnO4-unsplash.jpg"
 - "/sonja-punz-N47B_zibNGo-unsplash.jpg"

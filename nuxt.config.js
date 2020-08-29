@@ -3,11 +3,15 @@ import path from "path";
 const glob = require('glob');
 const config = require("./content/data/config.json")
 /* eslin-enable */
-const dynamicRoutes = getDynamicPaths({
-  '/blog': 'content/blog-posts/*.md',
- });
+// const dynamicRoutes = getDynamicPaths({
+//   '/blog': 'content/blog-posts/*.md',
+//  });
 
 export default {
+  env: {
+    strapiBaseUri: process.env.API_URL || 'http://localhost:1337',
+  },
+  
   mode: 'universal',
   /*
    ** Headers of the page
@@ -26,10 +30,6 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: '#fff' },
-  /*
    ** Global CSS
    */
   css: ['@/assets/styles/reset.scss', '@/assets/styles/global.scss'],
@@ -37,36 +37,47 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [],
+    /*
+   ** Auto import components
+   ** See https://nuxtjs.org/api/configuration-components
+   */
+  components: true,
   /*
    ** Nuxt.js dev-modules
    */
-  devModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+  buildModules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/style-resources',
   ],
+  styleResources: {
+    // scss: ['./assets/scss/variables.scss'],
+  },
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxt/content'],
+  content: {
+    nestedProperties: ['author.name'],
+  },
   /*
    ** Build configuration
    */
   build: {
-    /*
-     ** Using frontmatter-markdown-loader here to parse md files
-     */
-    extend(config, ctx) {  
-      config.module.rules.push(
-      {
-          test: /\.md$/,
-          loader: "frontmatter-markdown-loader",
-          include: path.resolve(__dirname, "content/blog-posts")
-      })
-    }    
+    // /*
+    //  ** Using frontmatter-markdown-loader here to parse md files
+    //  */
+    // extend(config, ctx) {  
+    //   config.module.rules.push(
+    //   {
+    //       test: /\.md$/,
+    //       loader: "frontmatter-markdown-loader",
+    //       include: path.resolve(__dirname, "content/blog-posts")
+    //   })
+    // }    
   },
-  generate: {
-    routes: dynamicRoutes
-  }
+  // generate: {
+  //   routes: dynamicRoutes
+  // }
 }
 /**
  * Create an array of URLs from a list of files
