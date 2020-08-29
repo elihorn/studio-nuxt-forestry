@@ -5,6 +5,5 @@ media:
 slug: ''
 
 ---
-Psychic Interior 1   
 Pencil on paper  
 23 x 56 cm
