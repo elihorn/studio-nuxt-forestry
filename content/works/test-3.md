@@ -1,7 +1,10 @@
 ---
-title: Test 3
+title: Psychic Interior 1
 media:
-- "/kunj-parekh-H69EgivmCjE-unsplash.jpg"
+- uploads/Eli-Horn_002.jpg
+slug: ''
 
 ---
-Hello I'm testing you out
+Psychic Interior 1   
+Pencil on paper  
+23 x 56 cm
