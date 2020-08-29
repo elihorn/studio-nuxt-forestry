@@ -8,6 +8,11 @@ fields:
   config:
     required: false
   label: Title
+- name: slug
+  type: text
+  config:
+    required: false
+  label: Slug
 - name: media
   type: image_gallery
   config: {}
