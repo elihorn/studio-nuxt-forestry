@@ -9,7 +9,7 @@ fields:
     min: 
     max: 
     source:
-      type: simple
+      type: pages
       section: ''
   label: Index
 pages:
