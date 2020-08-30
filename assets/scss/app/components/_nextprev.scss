@@ -12,10 +12,10 @@
         height: 100%;
         overflow: hidden;
         text-indent: -9999px;
-        &.next {
+        &.prev {
             cursor: w-resize;
         }
-        &.prev {
+        &.next {
             cursor: e-resize;
             margin-left: auto;
         }

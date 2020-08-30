@@ -40,7 +40,9 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+
+  plugins: ['~/plugins/mapOrder.js', '~/plugins/surround.js'],
+
     /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components

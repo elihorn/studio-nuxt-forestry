@@ -5,16 +5,14 @@
 </template>
 <script>
 export default {
-  async asyncData({ $content, params }) {
+  async asyncData({ app, $content, params }) {
     try {
       const name = 'works'
-      const { index } = await $content('data/indexes/works-index')
-      .only('index')
-      .fetch()
       const posts = await $content(name, params.slug)
-      .sortBy('date', 'desc')
+      .sortBy('date', 'asc')
       .fetch()
-      console.log(posts, index)
+      const { index } = await $content('data/indexes/works-index').only('index').fetch()
+      app.$mapOrder(posts, index, 'slug')
       return {
         posts,
         name

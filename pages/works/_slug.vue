@@ -17,15 +17,16 @@
         api_url: process.env.strapiBaseUri+"/",
       }
     },
-    async asyncData({ $content, params, error }) {
+    async asyncData({ app, $content, params, error }) {
       try {
         const name = 'works'
         const post = await $content(name, params.slug).fetch()
-        const [prev, next] = await $content(name)
+        const posts = await $content(name)
           .only(['title', 'slug'])
-          .sortBy('date', 'asc')
-          .surround(params.slug)
           .fetch()
+        const { index } = await $content('data/indexes/works-index').only('index').fetch()
+        app.$mapOrder(posts, index, 'slug')
+        const [prev, next] = app.$surround(posts, params.slug);
         return {
           post,
           prev,
@@ -36,6 +37,6 @@
         console.log(error)
         return false
       }
-    }, 
+    },
   }
 </script>
