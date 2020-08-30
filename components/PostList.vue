@@ -6,11 +6,11 @@
         class="post-link"
       >
         <div class="post-image">
-          <img :src="post.media" :alt="post.title" />
+          <img :src="api_url + post.media" :alt="post.title" />
         </div>
         <div class="post-body">
-          <h2>{{ post.title }}</h2>
-          <!-- <nuxt-content :document="post" /> -->
+          <h3>{{ post.title }}</h3>
+          <nuxt-content :document="post" />
         </div>
       </nuxt-link>
     </li>
@@ -27,6 +27,11 @@ export default {
       type: String,
       required: true
     }
-  }
+  },
+  data() {
+    return {
+      api_url: process.env.strapiBaseUri+"/",
+    }
+  },
 };
 </script>

@@ -1,6 +1,7 @@
 .single {
     .post-image {
         height: calc(100vh - 2rem);
+        min-height: 40rem;
         img {
             width: auto;
             max-height: 100%;

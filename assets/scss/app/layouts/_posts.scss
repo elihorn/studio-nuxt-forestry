@@ -13,7 +13,7 @@
       .post-body {
         @include sidebar;
         opacity: 0;
-        transition: opacity 250ms 250ms $ease-in-out-circ;
+        transition: opacity 1000ms $ease-in-out-circ;
         bottom: 0;
         background: var(--color-bg);
         z-index: 10;
@@ -21,7 +21,7 @@
       &:hover {
         .post-body {
           opacity: 1;
-          transition: opacity 250ms $ease-in-out-circ;
+          transition: none;
           display: block;
           z-index: 20;
         }

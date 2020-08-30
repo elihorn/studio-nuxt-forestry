@@ -5,9 +5,9 @@
       </figure>
     <div class="post-body" >
       <h3>{{ post.title }}</h3>
-      <nuxt-content :document="post" :target="prev_next_target" />
+      <nuxt-content :document="post" :target="name+'-slug'" />
     </div>
-    <prev-next :prev="prev" :next="next" />
+    <prev-next :prev="prev" :next="next" :target="name+'-slug'" />
   </article>
 </template>
 <script>
@@ -15,13 +15,13 @@
     data() {
       return {
         api_url: process.env.strapiBaseUri+"/",
-        prev_next_target: 'works-slug',
       }
     },
     async asyncData({ $content, params, error }) {
       try {
-        const post = await $content('works', params.slug).fetch()
-        const [prev, next] = await $content('works')
+        const name = 'works'
+        const post = await $content(name, params.slug).fetch()
+        const [prev, next] = await $content(name)
           .only(['title', 'slug'])
           .sortBy('date', 'asc')
           .surround(params.slug)
@@ -30,6 +30,7 @@
           post,
           prev,
           next,
+          name,
         }
       } catch(error) {
         console.log(error)

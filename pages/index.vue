@@ -1,20 +1,45 @@
 <template>
-  <div id="content" class="index">
-    <PostList :posts="posts" :target="name+'-slug'" />
-  </div>
+  <article id="content" class="works single">
+      <figure class="post-image">
+          <img :src="api_url + post.media" :alt="post.title">
+      </figure>
+    <div class="post-body" >
+      <h3>{{ post.title }}</h3>
+      <nuxt-content :document="post" :target="name+'-slug'" />
+    </div>
+    <prev-next :prev="prev" :next="next" :target="name+'-slug'" />
+  </article>
 </template>
-
 <script>
-export default {
-  async asyncData({ $content, params }) {
-      const name = 'blog'
-      const posts = await $content(name, params.slug)
-      .sortBy('date', 'desc')
-      .fetch()
+  export default {
+    data() {
       return {
-        posts,
-        name
+        api_url: process.env.strapiBaseUri+"/",
       }
+    },
+    async asyncData({ $content, params, error }) {
+      try {
+        const name = 'works'
+        const posts = await $content(name)
+        .sortBy('date', 'desc')
+        .limit(1)
+        .fetch()
+        const post = posts[0]
+        const [prev, next] = await $content(name)
+          .only(['title', 'slug'])
+          .sortBy('date', 'asc')
+          .surround(post.slug)
+          .fetch()
+        return {
+          post,
+          prev,
+          next,
+          name,
+        }
+      } catch(error) {
+        console.log(error)
+        return false
+      }
+    }, 
   }
-}
 </script>
