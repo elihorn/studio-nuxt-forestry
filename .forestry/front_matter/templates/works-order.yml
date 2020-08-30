@@ -12,3 +12,5 @@ fields:
       type: pages
       section: works
   label: Works
+pages:
+- content/works/order/works-order.md
