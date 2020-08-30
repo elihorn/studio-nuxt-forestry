@@ -14,7 +14,7 @@ sections:
   templates:
   - works
 - type: directory
-  path: ''
+  path: content/works/order
   label: Works Order
   create: all
   match: "**/*"
