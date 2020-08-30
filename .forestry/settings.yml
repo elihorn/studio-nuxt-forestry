@@ -14,10 +14,11 @@ sections:
   templates:
   - works
 - type: directory
-  path: content/works/order
+  path: content/works/index
   label: Works Order
-  create: all
+  create: documents
   match: "**/*"
+  new_doc_ext: ".json"
   templates:
   - works-order
 - type: directory
