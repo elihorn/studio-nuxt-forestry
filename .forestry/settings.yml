@@ -14,6 +14,13 @@ sections:
   templates:
   - works
 - type: directory
+  path: ''
+  label: Works Order
+  create: all
+  match: "**/*"
+  templates:
+  - works-order
+- type: directory
   path: content/projects
   label: Projects
   create: documents
