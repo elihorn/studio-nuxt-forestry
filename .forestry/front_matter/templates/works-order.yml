@@ -2,7 +2,7 @@
 label: Indexes
 hide_body: true
 fields:
-- name: works
+- name: index
   type: list
   config:
     use_select: true
@@ -10,8 +10,8 @@ fields:
     max: 
     source:
       type: pages
-      section: works
-  label: Works
+      section: ''
+  label: Index
 pages:
 - content/works/index/works-index.json
 - content/works/order/works-order.md
