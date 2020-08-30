@@ -14,14 +14,6 @@ sections:
   templates:
   - works
 - type: directory
-  path: content/works/index
-  label: Works Index
-  create: documents
-  match: "**/*"
-  new_doc_ext: json
-  templates:
-  - works-order
-- type: directory
   path: content/projects
   label: Projects
   create: documents
@@ -36,6 +28,14 @@ sections:
 - type: document
   path: content/data/config.json
   label: Site Info
+- type: directory
+  path: content/indexes
+  label: Indexes
+  create: documents
+  match: "**/*"
+  new_doc_ext: json
+  templates:
+  - works-order
 upload_dir: static/uploads
 public_path: uploads
 front_matter_path: ''
