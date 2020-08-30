@@ -22,3 +22,5 @@ fields:
   type: image_gallery
   config: {}
   label: Media
+pages:
+- content/projects/test-project.md
