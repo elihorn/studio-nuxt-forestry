@@ -14,12 +14,12 @@ sections:
   templates:
   - works
 - type: directory
-  path: content/blog-posts
-  label: Blog Posts
+  path: content/projects
+  label: Projects
   create: documents
   match: "**/*"
   templates:
-  - blog-post
+  - projects
 - type: document
   path: content/data/info.json
   label: Info Page

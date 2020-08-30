@@ -1,21 +1,19 @@
-// the posts are passed down to the Blog List component to be rendered
-
 <template>
-  <div>
-    <WorkList :posts="posts" />
+  <div id="content" class="index">
+    <PostList :posts="posts" :target="name+'-slug'" />
   </div>
 </template>
 
 <script>
 export default {
-  layout: 'layout',
   async asyncData({ $content, params }) {
-      const posts = await $content('works', params.slug)
+      const name = 'works'
+      const posts = await $content(name, params.slug)
       .sortBy('date', 'desc')
       .fetch()
-      
       return {
-        posts
+        posts,
+        name
       }
   }
 }

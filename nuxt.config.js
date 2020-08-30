@@ -9,7 +9,7 @@ const config = require("./content/data/config.json")
 
 export default {
   env: {
-    strapiBaseUri: process.env.API_URL || 'http://localhost:1337',
+    strapiBaseUri: process.env.API_URL || 'http://localhost:3000',
   },
   
   mode: 'universal',
@@ -32,7 +32,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/styles/reset.scss', '@/assets/styles/global.scss'],
+  css: ['@/assets/scss/main.scss'],
+
+  styleResources: {
+    scss: ['./assets/scss/variables.scss'],
+  },
   /*
    ** Plugins to load before mounting the App
    */
@@ -50,7 +54,7 @@ export default {
     '@nuxtjs/style-resources',
   ],
   styleResources: {
-    // scss: ['./assets/scss/variables.scss'],
+    scss: ['./assets/scss/variables.scss'],
   },
   /*
    ** Nuxt.js modules

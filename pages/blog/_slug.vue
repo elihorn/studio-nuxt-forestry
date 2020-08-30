@@ -1,7 +1,7 @@
 <template>
   <article class="blog">
       <figure class="blog__hero">
-          <img :src="post.hero_image" :alt="post.title">
+          <img :src="api_url + post.hero_image" :alt="post.title">
       </figure>
     <div class="blog__info" >
       <h1>{{ post.title }}</h1>
@@ -13,7 +13,11 @@
 </template>
 <script>
   export default {
-    layout: "layout",
+    data() {
+      return {
+        api_url: process.env.strapiBaseUri+"/"
+      }
+    },
     computed: {
       formattedDate() {
         return new Date(this.post.date).toDateString().slice(4)

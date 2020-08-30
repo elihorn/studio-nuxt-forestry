@@ -1,0 +1,22 @@
+a {
+    color: var(--bc);
+    text-decoration: none;
+    text-rendering: optimizelegibility;
+    outline: 0;
+    &:focus,
+    &:active,
+    &:hover {
+        outline: violet;
+    }
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a {
+  &:hover {
+    border-radius: 50%;
+    background: var(--color-bg2);
+  }
+}

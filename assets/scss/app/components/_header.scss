@@ -1,0 +1,17 @@
+#header {
+  nav {
+    .menu {
+      display: none;
+      li {
+        width: 100%;
+        display: block;
+        clear: both;
+      }
+    }
+    &:hover {
+      .menu {
+        display: block;
+      }
+    }
+  }
+}

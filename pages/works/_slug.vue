@@ -1,16 +1,12 @@
-// this is a dynamically created template
-
 <template>
-  <article class="blog">
-      <figure class="blog__hero">
-          <img :src="post.media" :alt="post.title">
+  <article id="content" class="works single">
+      <figure class="post-image">
+          <img :src="api_url + post.media" :alt="post.title">
       </figure>
-    <div class="blog__info" >
-      {{ post.media[0] }}
-      <h1>{{ post.title }}</h1>
-      <h3>{{ formattedDate }}</h3>
+    <div class="post-body" >
+      <h3>{{ post.title }}</h3>
+      <nuxt-content :document="post" :target="prev_next_target" />
     </div>
-    <nuxt-content :document="post" />
     <prev-next :prev="prev" :next="next" />
   </article>
 </template>
@@ -18,7 +14,8 @@
   export default {
     data() {
       return {
-        api_url: process.env.strapiBaseUri,
+        api_url: process.env.strapiBaseUri+"/",
+        prev_next_target: 'works-slug',
       }
     },
     async asyncData({ $content, params, error }) {
