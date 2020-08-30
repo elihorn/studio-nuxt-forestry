@@ -20,6 +20,14 @@ sections:
   match: "**/*"
   templates:
   - projects
+- type: directory
+  path: content/data/indexes
+  label: Indexes
+  create: documents
+  match: "**/*"
+  new_doc_ext: json
+  templates:
+  - indexes
 - type: document
   path: content/data/info.json
   label: Info Page
@@ -28,14 +36,6 @@ sections:
 - type: document
   path: content/data/config.json
   label: Site Info
-- type: directory
-  path: content/data
-  label: Indexes
-  create: documents
-  match: "**/*"
-  new_doc_ext: json
-  templates:
-  - works-order
 upload_dir: static/uploads
 public_path: uploads
 front_matter_path: ''

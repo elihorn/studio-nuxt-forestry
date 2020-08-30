@@ -13,4 +13,4 @@ fields:
       section: ''
   label: Index
 pages:
-- content/data/works-index.json
+- content/data/indexes/works-index.json
