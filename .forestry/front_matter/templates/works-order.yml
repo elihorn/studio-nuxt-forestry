@@ -13,5 +13,6 @@ fields:
       section: ''
   label: Index
 pages:
+- content/indexes/works-index.json
 - content/works/index/works-index.json
 - content/works/order/works-order.md
