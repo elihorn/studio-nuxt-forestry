@@ -13,4 +13,5 @@ fields:
       section: works
   label: Works
 pages:
+- content/works/index/works-index.json
 - content/works/order/works-order.md

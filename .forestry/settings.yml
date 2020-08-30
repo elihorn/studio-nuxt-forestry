@@ -15,10 +15,10 @@ sections:
   - works
 - type: directory
   path: content/works/index
-  label: Works Order
+  label: Works Index
   create: documents
   match: "**/*"
-  new_doc_ext: ".json"
+  new_doc_ext: json
   templates:
   - works-order
 - type: directory
