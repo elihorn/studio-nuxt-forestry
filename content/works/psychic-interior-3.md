@@ -2,7 +2,7 @@
 title: Psychic Interior 3
 slug: psychic-interior-3
 media:
-- uploads/Eli-Horn_011.jpg
+- uploads/Eli-Horn_Psychic-Interior_003.jpg
 
 ---
 Pencil on paper  
