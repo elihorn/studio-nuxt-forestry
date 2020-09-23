@@ -1,6 +1,6 @@
 ---
 title: Container 2
-slug: container-1
+slug: container-2
 media:
 - uploads/sho_product_02-2_02.jpg
 
