@@ -1,9 +1,9 @@
 ---
 title: Trials 1
-slug: vide
+slug: trials-1
 media:
-- uploads/Eli-Horn_Vide.jpg
+- uploads/trials-b_med2.jpg
 
 ---
-Pencil on paper  
-23 x 56 cm
+Mixed media on paper  
+61 x 91 cm
