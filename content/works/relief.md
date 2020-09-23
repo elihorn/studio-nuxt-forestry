@@ -1,9 +1,9 @@
 ---
 title: Relief
-slug: untitled
+slug: relief
 media:
-- uploads/Eli-Horn_Untitled.jpg
+- uploads/relief_01-0.jpg
 
 ---
-Pencil on paper  
+Etching on paper  
 23 x 56 cm
