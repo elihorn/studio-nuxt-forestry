@@ -1,9 +1,9 @@
 ---
 title: Container 1
-slug: vide
+slug: container-1
 media:
-- uploads/Eli-Horn_Vide.jpg
+- uploads/sho_product_02-0_02.jpg
 
 ---
-Pencil on paper  
-23 x 56 cm
+Risograph print on paper  
+28 x 43 cm
