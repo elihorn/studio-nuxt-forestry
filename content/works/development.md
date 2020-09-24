@@ -1,9 +1,9 @@
 ---
 title: Development
-slug: trials-1
+slug: development
 media:
-- uploads/trials-b_med2.jpg
+- uploads/development_large.jpg
 
 ---
-Mixed media on paper  
+Mixed media on board  
 61 x 91 cm
