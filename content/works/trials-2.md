@@ -1,8 +1,8 @@
 ---
 title: Trials 2
-slug: trials-1
+slug: trials-2
 media:
-- uploads/trials-b_med2.jpg
+- uploads/trials-c_med2.jpg
 
 ---
 Mixed media on paper  
