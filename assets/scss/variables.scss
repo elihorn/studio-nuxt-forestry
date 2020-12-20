@@ -1,9 +1,0 @@
-/* Layout */
-$margin-page: 1rem;
-$margin-col: 1rem;
-@mixin sidebar {
-    position: fixed;
-    right: 0;
-    width: 25%;
-    padding: $margin-col $margin-col  $margin-col  0;
-}

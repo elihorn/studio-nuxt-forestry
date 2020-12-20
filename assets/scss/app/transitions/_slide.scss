@@ -1,0 +1,27 @@
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition-duration: 500ms;
+  .post-media {
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+    transition-duration: 500ms;
+  }
+}
+.slide-left-enter {
+  .post-media {
+    transform: translateX(-100%);
+  }
+}
+.slide-left-leave-to {
+  .post-media {
+    transform: translateX(100vw);
+  }
+}
+.slide-right-enter,
+.slide-right-leave-to {
+  .post-media {
+    transform: translateX(100%);
+  }
+}

@@ -12,11 +12,6 @@
 </template>
 <script>
   export default {
-    data() {
-      return {
-        api_url: process.env.strapiBaseUri+"/",
-      }
-    },
     async asyncData({ app, $content, params, error }) {
       try {
         const name = 'works'
@@ -34,6 +29,11 @@
       } catch(error) {
         console.log(error)
         return false
+      }
+    },
+    data() {
+      return {
+        api_url: process.env.strapiBaseUri+"/",
       }
     },
   }

@@ -1,16 +1,16 @@
 <template>
   <div id="header">
     <nav class="dropdown">
-      <a href="/">Eli Horn</a>
+      <nuxt-link to href="/">Eli Horn</nuxt-link>
       <ul class="menu">
         <li>
-          <a href="/works">Works</a>
+          <nuxt-link to="/works">Works</nuxt-link>
         </li>
         <li>
-          <a href="/projects">Projects</a>
+          <nuxt-link to="/projects">Projects</nuxt-link>
         </li>
         <li>
-          <a href="/info">Info</a>
+          <nuxt-link to="/info">Info</nuxt-link>
         </li>
       </ul>
     </nav>

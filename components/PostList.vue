@@ -3,10 +3,11 @@
     <li v-for="post in posts" :key="post.title" class="grid-item">
       <nuxt-link
         :to="{ name: target, params: { slug: post.slug } }"
-        class="post-link"
+        :class="[{ active: activePost === post }, `post-link`]"
+        @click.native="activePost = post"
       >
-        <div class="post-image">
-          <img :src="api_url + post.media" :alt="post.title" />
+        <div class="post-media">
+          <img :src="api_url + post.media[0]" :alt="post.title" />
         </div>
         <div class="post-body">
           <h3>{{ post.title }}</h3>
@@ -21,17 +22,18 @@ export default {
   props: {
     posts: {
       type: Array,
-      required: true
+      required: true,
     },
     target: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      api_url: process.env.strapiBaseUri+"/",
-    }
+      api_url: process.env.strapiBaseUri + '/',
+      activePost: false,
+    };
   },
 };
 </script>

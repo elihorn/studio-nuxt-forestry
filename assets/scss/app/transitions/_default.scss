@@ -1,0 +1,17 @@
+$duration: 0ms;
+
+.page-enter-active,
+.page-leave-active {
+  transition-duration: $duration;
+  .post-media {
+    transition-property: opacity;
+    transition-timing-function: ease-in-out;
+    transition-duration: $duration;
+  }
+}
+.page-enter,
+.page-leave-to {
+  .post-media {
+    opacity: 0;
+  }
+}

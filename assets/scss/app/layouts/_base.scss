@@ -4,10 +4,11 @@
 }
 #header {
   @include sidebar;
-  order: 2;
-}
-#content { 
-  width: 75%;
   order: 1;
+}
+#content {
+  width: 75%;
+  order: 2;
   padding: $margin-page;
+  margin-left: auto;
 }

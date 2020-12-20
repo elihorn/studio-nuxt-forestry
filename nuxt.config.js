@@ -1,18 +1,15 @@
-import path from "path";
 /* eslint-disable */
-const glob = require('glob');
-const config = require("./content/data/config.json")
+const config = require('./content/data/config.json');
 /* eslin-enable */
-// const dynamicRoutes = getDynamicPaths({
-//   '/blog': 'content/blog-posts/*.md',
-//  });
-
+const dev =
+  process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test';
 export default {
+  dev,
   env: {
-    strapiBaseUri: process.env.API_URL || 'http://localhost:3000',
+    strapiBaseUri: process.env.BASE_URL || 'http://localhost:3000',
   },
-  
-  mode: 'universal',
+  target: 'static',
+  modern: dev ? false : 'client',
   /*
    ** Headers of the page
    */
@@ -24,10 +21,10 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: config.description || ''
-      }
+        content: config.description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Global CSS
@@ -40,10 +37,9 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-
   plugins: ['~/plugins/mapOrder.js', '~/plugins/surround.js'],
 
-    /*
+  /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
    */
@@ -51,13 +47,10 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/style-resources',
-  ],
-  styleResources: {
-    scss: ['./assets/scss/variables.scss'],
-  },
+  buildModules: ['@nuxtjs/eslint-module'],
+  // styleResources: {
+  //   scss: ['./assets/scss/variables.scss'],
+  // },
   /*
    ** Nuxt.js modules
    */
@@ -65,40 +58,4 @@ export default {
   content: {
     nestedProperties: ['author.name'],
   },
-  /*
-   ** Build configuration
-   */
-  build: {
-    // /*
-    //  ** Using frontmatter-markdown-loader here to parse md files
-    //  */
-    // extend(config, ctx) {  
-    //   config.module.rules.push(
-    //   {
-    //       test: /\.md$/,
-    //       loader: "frontmatter-markdown-loader",
-    //       include: path.resolve(__dirname, "content/blog-posts")
-    //   })
-    // }    
-  },
-  // generate: {
-  //   routes: dynamicRoutes
-  // }
-}
-/**
- * Create an array of URLs from a list of files
- * @param {*} urlFilepathTable
- */
-
-/* referenced https://github.com/jake-101/bael-template */
-function getDynamicPaths(urlFilepathTable) {
-  return [].concat(
-    ...Object.keys(urlFilepathTable).map(url => {
-      const filepathGlob = urlFilepathTable[url];
-      const routes = glob
-        .sync(filepathGlob)
-        .map(filepath => `${url}/${path.basename(filepath, '.md')}`);
-      return routes
-    })
-  );
-}
+};

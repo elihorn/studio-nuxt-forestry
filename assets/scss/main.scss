@@ -1,3 +1,12 @@
+/* Layout */
+$margin-page: 1rem;
+$margin-col: 1rem;
+@mixin sidebar {
+  position: fixed;
+  left: 0;
+  width: 25%;
+}
+
 /* Set up a baseline environment. */
 @import '~easings.scss';
 @import './app/typography';
@@ -18,9 +27,10 @@
 
 /* App specific styles and theme here. */
 
+@import './app/transitions/default';
+@import './app/transitions/slide';
 @import './app/layouts/base';
 @import './app/layouts/posts';
-@import './app/layouts/post';
 @import './app/components/header';
 @import './app/components/main';
 @import './app/components/footer';
@@ -38,9 +48,9 @@
   --line-height: 1.5;
 
   --color-fg: #000000;
-  --color-bg: #ffffff;
-  --color-bg2: #  ;
+  --color-bg: #fff;
+  --color-bg2: #;
   --color-border: #ffffff;
 
-  --column-width: 10em;
+  --column-width: 12em;
 }

@@ -1,8 +1,13 @@
 #header {
-  z-index: 10;
+  z-index: 5;
   nav {
+    padding: $margin-col * 2;
     .menu {
-      display: none;
+      opacity: 0;
+      max-height: 0px;
+      height: auto;
+      overflow: hidden;
+      transition: opacity 1000ms $ease-in-out-circ, max-height 0s linear 1000ms;
       li {
         width: 100%;
         display: block;
@@ -10,11 +15,10 @@
       }
     }
     &:hover {
-      > a {
-        display: none;
-      }
       .menu {
-        display: block;
+        opacity: 1;
+        max-height: 100vh;
+        transition: none;
       }
     }
   }

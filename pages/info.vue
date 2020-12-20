@@ -12,11 +12,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      api_url: process.env.strapiBaseUri + '/'
-    };
-  },
   async asyncData({ app, $content, params, error }) {
     try {
       const name = 'info';
@@ -28,6 +23,11 @@ export default {
       console.log(error);
       return false;
     }
-  }
+  },
+  data() {
+    return {
+      api_url: process.env.strapiBaseUri + '/'
+    };
+  },
 };
 </script>
