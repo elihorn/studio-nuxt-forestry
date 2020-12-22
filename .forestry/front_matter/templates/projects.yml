@@ -18,5 +18,18 @@ fields:
   config:
     required: false
   label: Description
+- name: media
+  type: field_group_list
+  fields:
+  - name: item
+    type: include
+    config: {}
+    template: media
+    label: Item
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Media
 pages:
 - content/projects/test-project.md
