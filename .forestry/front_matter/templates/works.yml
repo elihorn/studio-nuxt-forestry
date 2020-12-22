@@ -19,7 +19,15 @@ fields:
     maxSize: 64
   label: Image
 - name: media
-  type: include
-  config: {}
-  template: media
+  type: field_group_list
+  fields:
+  - name: media_item
+    type: include
+    config: {}
+    template: media
+    label: Media item
+  config:
+    min: 
+    max: 
+    labelField: 
   label: Media
