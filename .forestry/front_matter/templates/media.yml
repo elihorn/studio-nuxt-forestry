@@ -1,6 +1,7 @@
 ---
 label: Media
-hide_body: false
+hide_body: true
+display_field: title
 fields:
 - name: file
   type: file
@@ -12,3 +13,12 @@ fields:
   config:
     required: false
   label: Title
+- name: caption
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Caption
