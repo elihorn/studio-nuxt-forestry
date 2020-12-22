@@ -1,6 +1,6 @@
 ---
 title: Test Project 2
-slug: test-project
+slug: test-project-2
 description: Tesing the projects
 media:
 - file: uploads/Eli-Horn_Veil.jpg
