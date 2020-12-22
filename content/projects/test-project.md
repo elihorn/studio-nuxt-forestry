@@ -3,6 +3,9 @@ title: Test Project
 slug: test-project
 description: Tesing the projects
 media:
+- file: uploads/shop_09.jpg
+  title: Veil 2
+  caption: ''
 - file: uploads/Eli-Horn_Veil.jpg
   title: Veil 1
   caption: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in aliquam
