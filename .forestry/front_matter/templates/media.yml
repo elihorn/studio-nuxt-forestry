@@ -1,7 +1,7 @@
 ---
 label: Media
 hide_body: true
-display_field: file
+display_field: title
 fields:
 - name: file
   type: file
