@@ -19,6 +19,7 @@ fields:
     maxSize: 64
   label: Image
 - name: media
-  type: image_gallery
+  type: include
   config: {}
+  template: media
   label: Media
