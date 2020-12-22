@@ -10528,6 +10528,11 @@ vue-router@^3.4.9:
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.4.9.tgz#c016f42030ae2932f14e4748b39a1d9a0e250e66"
   integrity sha512-CGAKWN44RqXW06oC+u4mPgHLQQi2t6vLD/JbGRDAXm0YpMv0bgpKuU5bBd7AvMgfTz9kXVRIWKHqRwGEb8xFkA==
 
+vue-scroll-behavior@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/vue-scroll-behavior/-/vue-scroll-behavior-0.3.0.tgz#95c5554576dcf7777842a3e1044c4b51b2e4cb55"
+  integrity sha512-wU0aN93uFEdg6eQNsW+SUsrAwV+2WsNS4pleACdUz3Aw4rNvZXqYMhKAFtbcAoaB51Bzqod+FWtVJ5qFr0KgbA==
+
 vue-server-renderer@^2.6.12:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/vue-server-renderer/-/vue-server-renderer-2.6.12.tgz#a8cb9c49439ef205293cb41c35d0d2b0541653a5"

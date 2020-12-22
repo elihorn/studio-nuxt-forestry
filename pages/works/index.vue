@@ -5,6 +5,11 @@
 </template>
 <script>
 export default {
+  beforeRouteLeave(to, from, next) {
+    console.log('beforeUnload');
+    localStorage.savedPosition = window.pageYOffset;
+    next();
+  },
   async asyncData({ app, $content, params, route }) {
     try {
       const name = route.name;

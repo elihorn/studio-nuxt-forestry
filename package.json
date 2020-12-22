@@ -18,7 +18,8 @@
     "frontmatter-markdown-loader": "^3.6.2",
     "node-sass": "^5.0.0",
     "nuxt": "^2.0.0",
-    "sass-loader": "^10.1.0"
+    "sass-loader": "^10.1.0",
+    "vue-scroll-behavior": "^0.3.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
