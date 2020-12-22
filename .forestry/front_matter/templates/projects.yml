@@ -32,4 +32,5 @@ fields:
     labelField: title
   label: Media
 pages:
+- content/projects/test-project-2.md
 - content/projects/test-project.md
