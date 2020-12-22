@@ -18,10 +18,5 @@ fields:
   config:
     required: false
   label: Description
-- name: media
-  type: include
-  config: {}
-  template: media
-  label: Media
 pages:
 - content/projects/test-project.md
