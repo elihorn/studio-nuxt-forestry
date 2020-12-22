@@ -29,5 +29,5 @@ fields:
   config:
     min: 
     max: 
-    labelField: 
+    labelField: title
   label: Media
