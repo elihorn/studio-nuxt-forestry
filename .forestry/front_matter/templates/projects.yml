@@ -29,7 +29,7 @@ fields:
   config:
     min: 
     max: 
-    labelField: 
+    labelField: title
   label: Media
 pages:
 - content/projects/test-project.md
