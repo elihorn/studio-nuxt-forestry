@@ -1,8 +1,8 @@
 <template>
   <ul class="post-list layout-grid">
-    <li v-for="post in posts" :key="post.title" class="grid-item">
+    <li v-for="post in posts" :key="post.slug" class="grid-item">
       <nuxt-link
-        :to="{ name: name + '-slug', params: { slug: post.slug } }"
+        :to="{ name: name + '-slug-media', params: { slug: post.slug } }"
         :class="[{ active: activePost === post }, `post-link`]"
         @click.native="activePost = post"
       >

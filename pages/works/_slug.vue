@@ -1,11 +1,10 @@
 <template>
   <article id="content">
-    <nuxt-child :key="this.$route.params.media" :post="post" />
+    <nuxt-child :key="$route.params.media" :post="post" />
     <prev-next
-      :key="this.$route.params.media"
+      :key="$route.params.media"
       :prev="prev"
       :next="next"
-      :name="this.$route.name"
       :count="post.media.length"
       :prev-count="prevCount"
     />
