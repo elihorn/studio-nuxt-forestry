@@ -30,10 +30,6 @@ export default {
    ** Global CSS
    */
   css: ['@/assets/scss/main.scss'],
-
-  styleResources: {
-    scss: ['./assets/scss/variables.scss'],
-  },
   /*
    ** Plugins to load before mounting the App
    */
@@ -48,9 +44,6 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: ['@nuxtjs/eslint-module'],
-  // styleResources: {
-  //   scss: ['./assets/scss/variables.scss'],
-  // },
   /*
    ** Nuxt.js modules
    */

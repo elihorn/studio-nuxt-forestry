@@ -2,12 +2,12 @@
   <ul class="post-list layout-grid">
     <li v-for="post in posts" :key="post.title" class="grid-item">
       <nuxt-link
-        :to="{ name: target, params: { slug: post.slug } }"
+        :to="{ name: name + '-slug', params: { slug: post.slug } }"
         :class="[{ active: activePost === post }, `post-link`]"
         @click.native="activePost = post"
       >
         <div class="post-media">
-          <img :src="api_url + post.media[0]" :alt="post.title" />
+          <img :src="api_url + post.image" :alt="post.title" />
         </div>
         <div class="post-body">
           <h3>{{ post.title }}</h3>
@@ -24,7 +24,7 @@ export default {
       type: Array,
       required: true,
     },
-    target: {
+    name: {
       type: String,
       required: true,
     },

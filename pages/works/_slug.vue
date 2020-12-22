@@ -1,21 +1,11 @@
 <template>
-  <article id="content" class="works single">
-    <div class="post-media">
-      <nuxt-child
-        :key="this.$route.params.media"
-        :media="post.media"
-        :title="post.title"
-      />
-    </div>
-    <div class="post-body">
-      <h3>{{ post.title }}</h3>
-      <nuxt-content :document="post" :target="name + '-slug-media'" />
-    </div>
+  <article id="content">
+    <nuxt-child :key="this.$route.params.media" :post="post" />
     <prev-next
       :key="this.$route.params.media"
       :prev="prev"
       :next="next"
-      :name="name"
+      :name="this.$route.name"
       :count="post.media.length"
       :prev-count="prevCount"
     />
@@ -23,15 +13,17 @@
 </template>
 <script>
 export default {
-  async asyncData({ app, $content, params, error }) {
+  async asyncData({ app, $content, params, error, route }) {
     try {
-      const name = 'works';
+      const name = route.name.split('-')[0];
       const post = await $content(name, params.slug).fetch();
       const posts = await $content(name).only(['title', 'slug']).fetch();
-      const { index } = await $content('data/indexes/works-index')
+      const { index } = await $content('data/indexes/' + name + '-index')
         .only('index')
         .fetch();
-      app.$mapOrder(posts, index, 'slug');
+      if (posts && index) {
+        app.$mapOrder(posts, index, 'slug');
+      }
       const [prev, next] = app.$surround(posts, params.slug);
       let prevCount = 0;
       if (prev) {
@@ -49,12 +41,6 @@ export default {
       console.log(error);
       return false;
     }
-  },
-  data() {
-    return {
-      api_url: process.env.strapiBaseUri + '/',
-      current: parseInt(this.$route.params.media) || 0,
-    };
   },
 };
 </script>

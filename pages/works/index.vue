@@ -1,20 +1,20 @@
 <template>
   <div id="content" class="index">
-    <PostList :posts="posts" :target="name + '-slug-media'" />
+    <PostList :posts="posts" :name="name" />
   </div>
 </template>
 <script>
 export default {
-  async asyncData({ app, $content, params }) {
+  async asyncData({ app, $content, params, route }) {
     try {
-      const name = 'works';
-      const posts = await $content(name, params.slug)
-        .sortBy('date', 'asc')
-        .fetch();
-      const { index } = await $content('data/indexes/works-index')
+      const name = route.name;
+      const posts = await $content(name).sortBy('date', 'asc').fetch();
+      const { index } = await $content('data/indexes/' + name + '-index')
         .only('index')
         .fetch();
-      app.$mapOrder(posts, index, 'slug');
+      if (posts && index) {
+        app.$mapOrder(posts, index, 'slug');
+      }
       return {
         posts,
         name,

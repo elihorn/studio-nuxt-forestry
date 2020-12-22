@@ -3,53 +3,53 @@
     <nuxt-link
       v-if="current > 1"
       :to="{
-        name: target,
+        name: name,
         params: { slug: $route.params.slug, media: current - 1 },
       }"
       class="prev"
     >
-      {{ prev.title }}
+      {{ prevText }}
     </nuxt-link>
     <nuxt-link
       v-else-if="current > 0"
       :to="{
-        name: target,
+        name: name,
         params: { slug: $route.params.slug },
       }"
       class="prev"
     >
-      {{ prev.title }}
+      {{ prevText }}
     </nuxt-link>
     <nuxt-link
       v-else-if="prev && prevCount > 0"
-      :to="{ name: target, params: { slug: prev.slug, media: prevCount } }"
+      :to="{ name: name, params: { slug: prev.slug, media: prevCount } }"
       class="prev"
     >
-      {{ prev.title }}
+      {{ prevText }}
     </nuxt-link>
     <nuxt-link
       v-else-if="prev"
-      :to="{ name: target, params: { slug: prev.slug } }"
+      :to="{ name: name, params: { slug: prev.slug } }"
       class="prev"
     >
-      {{ prev.title }}
+      {{ prevText }}
     </nuxt-link>
     <nuxt-link
       v-if="current < count - 1"
       :to="{
-        name: target,
+        name: name,
         params: { slug: $route.params.slug, media: current + 1 },
       }"
       class="next"
     >
-      {{ next.title }}
+      {{ nextText }}
     </nuxt-link>
     <nuxt-link
       v-else-if="next"
-      :to="{ name: target, params: { slug: next.slug } }"
+      :to="{ name: name, params: { slug: next.slug } }"
       class="next"
     >
-      {{ next.title }}
+      {{ nextText }}
     </nuxt-link>
   </nav>
 </template>
@@ -64,10 +64,6 @@ export default {
       type: Object,
       default: () => null,
     },
-    name: {
-      type: String,
-      required: true,
-    },
     count: {
       type: Number,
       default: 0,
@@ -80,7 +76,9 @@ export default {
   data() {
     return {
       current: parseInt(this.$route.params.media) || 0,
-      target: this.name + '-slug-media',
+      name: this.$route.name,
+      prevText: 'Previous',
+      nextText: 'Next',
     };
   },
 };

@@ -3,35 +3,32 @@ label: Projects
 hide_body: false
 display_field: title
 fields:
-- name: title
-  type: text
-  config:
-    required: true
-  label: Title
-- name: slug
-  type: text
-  config:
-    required: false
-  label: Slug
-- name: image
-  type: file
-  config:
-    maxSize: 64
-  label: Image
-- name: media
-  type: field_group_list
-  fields:
-  - name: item
-    type: include
-    config: {}
-    template: media
-    label: Item
-    description: Test
-  config:
-    min: 
-    max: 
-    labelField: title
-  label: Media
-pages:
-- content/projects/test-project-2.md
-- content/projects/test-project.md
+  - name: title
+    type: text
+    config:
+      required: true
+    label: Title
+  - name: slug
+    type: text
+    config:
+      required: false
+    label: Slug
+  - name: image
+    type: file
+    config:
+      maxSize: 64
+    label: Image
+  - name: media
+    type: field_group_list
+    fields:
+      - name: item
+        type: include
+        config: {}
+        template: media
+        label: Item
+        description: Test
+    config:
+      min:
+      max:
+      labelField: title
+    label: Media
