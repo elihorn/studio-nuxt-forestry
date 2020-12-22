@@ -31,6 +31,7 @@ fields:
     config: {}
     template: media
     label: Item
+    description: Test
   config:
     min: 
     max: 
