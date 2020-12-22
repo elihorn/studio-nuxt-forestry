@@ -1,8 +1,7 @@
 ---
 title: Trials 2
 slug: trials-2
-image:
-  - uploads/trials-c_med2.jpg
+image: uploads/trials-c_med2.jpg
 media:
   - uploads/trials-c_med2.jpg
 ---

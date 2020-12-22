@@ -1,8 +1,7 @@
 ---
 title: Psychic Interior 2
 slug: psychic-interior-2
-image:
-  - uploads/Eli-Horn_Psychic-Interior_002.jpg
+image: uploads/Eli-Horn_Psychic-Interior_002.jpg
 media:
   - uploads/Eli-Horn_Psychic-Interior_002.jpg
 ---

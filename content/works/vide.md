@@ -1,8 +1,7 @@
 ---
 title: Vide
 slug: vide
-image:
-  - uploads/Eli-Horn_Vide.jpg
+image: uploads/Eli-Horn_Vide.jpg
 media:
   - uploads/Eli-Horn_Vide.jpg
 ---

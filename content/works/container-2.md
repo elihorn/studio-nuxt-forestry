@@ -1,8 +1,7 @@
 ---
 title: Container 2
 slug: container-2
-image:
-  - uploads/sho_product_02-2_02.jpg
+image: uploads/sho_product_02-2_02.jpg
 media:
   - uploads/sho_product_02-2_02.jpg
 ---

@@ -1,8 +1,7 @@
 ---
 title: Untitled
 slug: untitled
-image:
-  - uploads/Eli-Horn_Untitled.jpg
+image: uploads/Eli-Horn_Untitled.jpg
 media:
   - uploads/Eli-Horn_Untitled.jpg
 ---

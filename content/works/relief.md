@@ -1,8 +1,7 @@
 ---
 title: Relief
 slug: relief
-image:
-  - uploads/relief_01-0.jpg
+image: uploads/relief_01-0.jpg
 media:
   - uploads/relief_01-0.jpg
 ---

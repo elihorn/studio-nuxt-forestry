@@ -1,8 +1,7 @@
 ---
 title: Blue
 slug: blue
-image:
-  - uploads/Eli-Horn_Blue.jpg
+image: uploads/Eli-Horn_Blue.jpg
 media:
   - uploads/Eli-Horn_Blue.jpg
 ---

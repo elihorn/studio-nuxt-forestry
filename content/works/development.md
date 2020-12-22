@@ -1,8 +1,7 @@
 ---
 title: Development
 slug: development
-image:
-  - uploads/development_large.jpg
+image: uploads/development_large.jpg
 media:
   - uploads/development_large.jpg
 ---

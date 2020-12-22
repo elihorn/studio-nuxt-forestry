@@ -1,8 +1,7 @@
 ---
 title: Cataract
 slug: cataract
-image:
-  - uploads/Eli-Horn_Cataract.jpg
+image: uploads/Eli-Horn_Cataract.jpg
 media:
   - uploads/Eli-Horn_Cataract.jpg
 ---
