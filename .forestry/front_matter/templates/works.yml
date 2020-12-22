@@ -13,11 +13,6 @@ fields:
   config:
     required: false
   label: Slug
-- name: description
-  type: textarea
-  config:
-    required: false
-  label: Description
 - name: image
   type: file
   config:
