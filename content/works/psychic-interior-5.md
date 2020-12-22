@@ -1,9 +1,11 @@
 ---
 title: Psychic Interior 5
 slug: psychic-interior-5
+image:
+  - uploads/Eli-Horn_Psychic-Interior_005.jpg
 media:
-- uploads/Eli-Horn_Psychic-Interior_005.jpg
-
+  - uploads/Eli-Horn_Psychic-Interior_005.jpg
 ---
+
 Pencil on paper  
 23 x 56 cm
