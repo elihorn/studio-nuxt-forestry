@@ -1,5 +1,5 @@
 <template>
-  <div id="page" :class="classObject">
+  <div id="page">
     <Header />
     <Nuxt />
   </div>

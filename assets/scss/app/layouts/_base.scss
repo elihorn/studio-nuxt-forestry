@@ -1,14 +1,18 @@
 #page {
-  display: flex;
-  flex-direction: row;
+  @media (min-width: $mq-sm) {
+    display: flex;
+    flex-direction: row;
+  }
 }
 #header {
   @include sidebar;
-  order: 1;
+  padding: $margin-col * 2;
 }
 #content {
-  width: 75%;
-  order: 2;
-  padding: $margin-page;
-  margin-left: auto;
+  @include main;
+  position: relative;
+  padding: 0 $margin-page;
+  @media (min-width: $mq-sm) {
+    padding: $margin-page;
+  }
 }

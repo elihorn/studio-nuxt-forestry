@@ -1,10 +1,29 @@
+/* Typography */
+$line-height: 1.5;
+
 /* Layout */
+$mq-sm: 40rem;
 $margin-page: 1rem;
 $margin-col: 1rem;
+$sidebar-width: 20%;
+
 @mixin sidebar {
-  position: fixed;
-  left: 0;
-  width: 25%;
+  width: 100%;
+  @media (min-width: $mq-sm) {
+    position: fixed;
+    left: 0;
+    width: $sidebar-width;
+    order: 1;
+  }
+}
+
+@mixin main {
+  width: 100%;
+  @media (min-width: $mq-sm) {
+    width: 100% - $sidebar-width;
+    order: 2;
+    margin-left: auto;
+  }
 }
 
 /* Set up a baseline environment. */
@@ -21,9 +40,7 @@ $margin-col: 1rem;
 
 /* Environment helpers & utilities. */
 
-@import './env/helpers/reusable';
 @import './env/helpers/pseudos';
-@import './env/helpers/group';
 
 /* App specific styles and theme here. */
 
@@ -45,12 +62,14 @@ $margin-col: 1rem;
   --font: 'New York Medium', 'Basis Grotesque Pro', sans-serif;
 
   --font-size: 12px;
-  --line-height: 1.5;
 
   --color-fg: #000000;
   --color-bg: #fff;
   --color-bg2: #;
   --color-border: #ffffff;
 
-  --column-width: 12em;
+  --column-width: 15em;
+
+  --mouse-x: 1px;
+  --mouse-y: 1px;
 }

@@ -1,8 +1,10 @@
 <template>
   <div id="header">
-    <nav class="dropdown">
-      <nuxt-link to href="/">Eli Horn</nuxt-link>
+    <nav>
       <ul class="menu">
+        <li id="root">
+          <nuxt-link to href="/">Eli Horn</nuxt-link>
+        </li>
         <li>
           <nuxt-link to="/works">Works</nuxt-link>
         </li>

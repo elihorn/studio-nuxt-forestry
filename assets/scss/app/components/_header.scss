@@ -1,24 +1,77 @@
 #header {
-  z-index: 5;
   nav {
-    padding: $margin-col * 2;
-    .menu {
-      opacity: 0;
-      max-height: 0px;
-      height: auto;
-      overflow: hidden;
-      transition: opacity 1000ms $ease-in-out-circ, max-height 0s linear 1000ms;
+    position: relative;
+    ul {
+      position: relative;
+      z-index: 5;
+    }
+    li {
+      display: inline;
+      width: auto;
+      &:not(:last-child) {
+        &:after {
+          content: ', ';
+        }
+      }
+      &#root {
+        &:after {
+          content: ': ';
+        }
+      }
+    }
+  }
+  &:hover {
+    nav {
+      ul.menu {
+        a {
+          opacity: 1;
+          transition: opacity 100ms $ease-in-out-circ;
+          &.nuxt-link-active:not(.nuxt-link-exact-active) {
+            &:before {
+              opacity: 1;
+              transition: opacity 100ms $ease-in-out-circ;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: $mq-sm) {
+    nav {
+      ul {
+        height: 100%;
+        height: calc(75vh - #{$margin-col * 4});
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
       li {
         width: 100%;
         display: block;
         clear: both;
+        &:not(:last-child),
+        &#root {
+          &:after {
+            content: '';
+          }
+        }
       }
-    }
-    &:hover {
-      .menu {
-        opacity: 1;
-        max-height: 100vh;
-        transition: none;
+      a {
+        position: relative;
+        &:before {
+          content: '\21B0';
+          position: absolute;
+          width: $margin-col * 2;
+          left: 0;
+          top: $line-height * -1rem;
+          opacity: 0;
+          transition: opacity 1000ms $ease-in-out-circ;
+        }
+        &:not(.nuxt-link-active) {
+          opacity: 0;
+          transition: opacity 1000ms $ease-in-out-circ;
+        }
       }
     }
   }

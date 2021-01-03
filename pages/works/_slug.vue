@@ -1,5 +1,5 @@
 <template>
-  <article id="content">
+  <article id="content" class="slug">
     <nuxt-child :key="$route.params.media" :post="post" />
     <prev-next
       :key="$route.params.media"
@@ -40,6 +40,33 @@ export default {
       console.log(error);
       return false;
     }
+  },
+  beforeMount() {
+    const root = document.documentElement;
+    root.addEventListener('mousemove', (e) => {
+      root.style.setProperty(
+        '--mouse-x',
+        (e.clientX / e.view.innerWidth) * 100 + '%'
+      );
+      root.style.setProperty(
+        '--mouse-y',
+        (e.clientY / e.view.innerHeight) * 100 + '%'
+      );
+      // root.style.setProperty(
+      //   '--mouse-x',
+      //   e.view.innerWidth / -2 -
+      //     (e.clientX / e.view.innerWidth) *
+      //       (media.clientWidth - e.view.innerWidth) +
+      //     'px'
+      // );
+      // root.style.setProperty(
+      //   '--mouse-y',
+      //   e.view.innerHeight / -2 -
+      //     (e.clientY / e.view.innerHeight) *
+      //       (media.clientHeight - e.view.innerHeight) +
+      //     'px'
+      // );
+    });
   },
 };
 </script>

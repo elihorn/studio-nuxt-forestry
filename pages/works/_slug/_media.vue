@@ -2,7 +2,11 @@
   <div class="post">
     <div class="post-media">
       <figure :class="{ zoom: zoom }" @click="zoom = !zoom">
-        <img :src="api_url + post.media[current].file" :alt="post.title" />
+        <img
+          id="media"
+          :src="api_url + post.media[current].file"
+          :alt="post.title"
+        />
       </figure>
     </div>
     <div class="post-body">
