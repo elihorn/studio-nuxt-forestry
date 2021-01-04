@@ -7,7 +7,12 @@
         @click.native="activePost = post"
       >
         <div class="post-media">
-          <img :src="api_url + post.image" :alt="post.title" />
+          <!-- <img :src="post.image" :alt="post.title" /> -->
+          <nuxt-image
+            :src="post.image"
+            :alt="post.title"
+            sizes="300,300:600,600:900"
+          />
         </div>
         <div class="post-body">
           <h3>{{ post.title }}</h3>
