@@ -14,8 +14,8 @@ sections:
   templates:
   - works
 - type: directory
-  path: content/works2
-  label: Works 2
+  path: content/exercise
+  label: Exercise
   create: documents
   match: "**/*"
   templates:
