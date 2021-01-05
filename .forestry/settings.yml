@@ -14,7 +14,7 @@ sections:
   templates:
   - works
 - type: directory
-  path: ''
+  path: content/works2
   label: Works 2
   create: documents
   match: "**/*"
