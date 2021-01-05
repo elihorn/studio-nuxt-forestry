@@ -10,7 +10,7 @@ fields:
     max: 
     source:
       type: pages
-      section: works
+      section: ''
       file: 
       path: ''
   label: Index
