@@ -7,12 +7,7 @@
         @click.native="activePost = post"
       >
         <div class="post-media">
-          <!-- <img :src="post.image" :alt="post.title" /> -->
-          <nuxt-image
-            :src="post.image"
-            :alt="post.title"
-            sizes="300,300:600,600:900"
-          />
+          <nuxt-image :src="post.image" :alt="post.title" sizes="300,600:600" />
         </div>
         <div class="post-body">
           <h3>{{ post.title }}</h3>
@@ -36,7 +31,6 @@ export default {
   },
   data() {
     return {
-      api_url: process.env.strapiBaseUri + '/',
       activePost: false,
     };
   },

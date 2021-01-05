@@ -14,5 +14,6 @@ module.exports = {
     'no-console': 'off',
     'no-sequences': 'off',
     'no-undef': 'off',
+    'no-v-html': 'off',
   },
 };
