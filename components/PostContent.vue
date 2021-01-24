@@ -4,7 +4,7 @@
       <figure :class="{ zoom: zoom }" @click="zoomImage">
         <nuxt-image
           v-if="!zoom"
-          :src="post.media[current].file"
+          :src="api_url + post.media[current].file"
           :alt="post.title"
           sizes="300,600:600,700"
           fit="contain"
@@ -12,7 +12,7 @@
         />
         <nuxt-image
           v-if="zoom"
-          :src="post.media[current].file"
+          :src="api_url + post.media[current].file"
           :alt="post.title"
           fit="contain"
           class="unscaled"
@@ -48,6 +48,7 @@ export default {
   },
   data() {
     return {
+      api_url: process.env.strapiBaseUri + '/',
       current: parseInt(this.$route.params.media) || 0,
       zoom: false,
     };

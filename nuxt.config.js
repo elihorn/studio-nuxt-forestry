@@ -51,4 +51,7 @@ export default {
   content: {
     nestedProperties: ['author.name'],
   },
+  image: {
+    sizes: [300, 600],
+  },
 };
