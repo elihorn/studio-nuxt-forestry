@@ -2,20 +2,22 @@
   <div class="post">
     <div class="post-media">
       <figure :class="{ zoom: zoom }" @click="zoomImage">
-        <nuxt-image
+        <nuxt-img
           v-if="!zoom"
-          :src="post.media[current].file"
+          :src="api_url + post.media[current].file"
           :alt="post.title"
           sizes="300,600:600,700"
           fit="contain"
           class="scaled"
+          format="webp"
         />
-        <nuxt-image
+        <nuxt-img
           v-if="zoom"
-          :src="post.media[current].file"
+          :src="api_url + post.media[current].file"
           :alt="post.title"
           fit="contain"
           class="unscaled"
+          format="webp"
         />
       </figure>
     </div>
@@ -48,6 +50,8 @@ export default {
   },
   data() {
     return {
+      // api_url: process.env.strapiBaseUri + '/',
+      api_url: '/',
       current: parseInt(this.$route.params.media) || 0,
       zoom: false,
     };

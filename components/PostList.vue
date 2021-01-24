@@ -18,12 +18,13 @@
             fit="contain"
             class="image-container"
           /> -->
-          <nuxt-image
-            :src="post.image"
+          <nuxt-img
+            :src="api_url + post.image"
             :alt="post.title"
             sizes="300,600:600"
             fit="contain"
             class="image-container"
+            format="webp"
           />
         </div>
         <div class="post-body">
@@ -55,6 +56,8 @@ export default {
   },
   data() {
     return {
+      api_url: '/',
+      // api_url: process.env.strapiBaseUri + '/',
       activePost: false,
     };
   },
