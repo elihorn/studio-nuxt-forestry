@@ -41,6 +41,7 @@ export default function (to, from, savedPosition) {
   }
 
   // Custom position when going back to works
+  console.log('scrollBehavior', localStorage.savedPosition);
   if (to.path === '/works' && localStorage.savedPosition) {
     position = { x: 0, y: parseFloat(localStorage.savedPosition) };
   }

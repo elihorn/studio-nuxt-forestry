@@ -1,0 +1,9 @@
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media (min-width: $mq-sm) {
+  .layout-grid {
+    grid-template-columns: repeat(auto-fit, minmax(var(--column-width), 1fr));
+  }
+}

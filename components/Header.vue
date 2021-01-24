@@ -9,9 +9,6 @@
           <nuxt-link to="/works">Works</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/works2">Works 2</nuxt-link>
-        </li>
-        <li>
           <nuxt-link to="/projects">Projects</nuxt-link>
         </li>
         <li>

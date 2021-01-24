@@ -1,16 +1,40 @@
 <template>
-  <ul class="post-list layout-grid">
-    <li v-for="post in posts" :key="post.slug" class="grid-item">
+  <ul class="post-list layout-offset">
+    <li v-for="post in posts" :key="post.slug" class="post">
       <nuxt-link
         :to="{ name: name + '-slug-media', params: { slug: post.slug } }"
         :class="[{ active: activePost === post }, `post-link`]"
         @click.native="activePost = post"
+        @mouseover.native="activePost = post"
       >
         <div class="post-media">
-          <nuxt-image :src="post.image" :alt="post.title" sizes="300,600:600" />
+          <!-- <nuxt-image
+            v-if="post.image === 'random'"
+            :src="
+              post.media[Math.floor(Math.random() * post.media.length)].file
+            "
+            :alt="post.title"
+            sizes="300,600:600"
+            fit="contain"
+            class="image-container"
+          /> -->
+          <nuxt-image
+            :src="post.image"
+            :alt="post.title"
+            sizes="300,600:600"
+            fit="contain"
+            class="image-container"
+          />
         </div>
         <div class="post-body">
-          <h3>{{ post.title }}</h3>
+          <h3>
+            {{ post.title }}
+            <span v-if="post.media.length > 1" class="count">
+              (
+              <span>{{ post.media.length }}</span>
+              )
+            </span>
+          </h3>
           <nuxt-content :document="post" />
         </div>
       </nuxt-link>

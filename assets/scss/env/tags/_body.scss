@@ -2,7 +2,7 @@ body {
   font-size: calc(var(--font-size) + var(--bu));
   font-family: var(--font);
   font-smooth: always;
-  font-weight: 300;
+  font-weight: var(--font-weight);
   font-style: normal;
   font-synthesis: none;
   font-stretch: normal;

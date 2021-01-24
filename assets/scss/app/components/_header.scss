@@ -1,10 +1,5 @@
 #header {
   nav {
-    position: relative;
-    ul {
-      position: relative;
-      z-index: 5;
-    }
     li {
       display: inline;
       width: auto;
@@ -19,9 +14,7 @@
         }
       }
     }
-  }
-  &:hover {
-    nav {
+    &:hover {
       ul.menu {
         a {
           opacity: 1;
@@ -64,7 +57,7 @@
           position: absolute;
           width: $margin-col * 2;
           left: 0;
-          top: $line-height * -1rem;
+          top: calc(var(--line-height) * -1rem);
           opacity: 0;
           transition: opacity 1000ms $ease-in-out-circ;
         }

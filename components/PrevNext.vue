@@ -1,52 +1,18 @@
 <template>
   <nav class="post-nav">
     <nuxt-link
-      v-if="current > 1"
+      v-if="prevParams"
       :to="{
         name: $route.name,
-        params: { slug: $route.params.slug, media: current - 1 },
+        params: prevParams,
       }"
       class="prev"
     >
       {{ prevText }}
     </nuxt-link>
     <nuxt-link
-      v-else-if="current > 0"
-      :to="{
-        name: $route.name,
-        params: { slug: $route.params.slug },
-      }"
-      class="prev"
-    >
-      {{ prevText }}
-    </nuxt-link>
-    <nuxt-link
-      v-else-if="prev && prevCount > 0"
-      :to="{ name: $route.name, params: { slug: prev.slug, media: prevCount } }"
-      class="prev"
-    >
-      {{ prevText }}
-    </nuxt-link>
-    <nuxt-link
-      v-else-if="prev"
-      :to="{ name: $route.name, params: { slug: prev.slug } }"
-      class="prev"
-    >
-      {{ prevText }}
-    </nuxt-link>
-    <nuxt-link
-      v-if="current < count - 1"
-      :to="{
-        name: $route.name,
-        params: { slug: $route.params.slug, media: current + 1 },
-      }"
-      class="next"
-    >
-      {{ nextText }}
-    </nuxt-link>
-    <nuxt-link
-      v-else-if="next"
-      :to="{ name: $route.name, params: { slug: next.slug } }"
+      v-if="nextParams"
+      :to="{ name: $route.name, params: nextParams }"
       class="next"
     >
       {{ nextText }}
@@ -78,7 +44,55 @@ export default {
       current: parseInt(this.$route.params.media) || 0,
       prevText: 'Previous',
       nextText: 'Next',
+      prevParams: false,
+      nextParams: false,
     };
+  },
+  mounted() {
+    if (this.prev) {
+      this.prevParams = { slug: this.prev.slug };
+    }
+    if (this.next) {
+      this.nextParams = { slug: this.next.slug };
+    }
+    if (this.current > 1) {
+      this.prevParams = {
+        slug: this.$route.params.slug,
+        media: this.current - 1,
+      };
+    } else if (this.current > 0) {
+      this.prevParams = { slug: this.$route.params.slug };
+    } else if (this.prev && this.prevCount > 0) {
+      this.prevParams = { slug: this.prev.slug, media: this.prevCount };
+    }
+    if (this.current < this.count - 1) {
+      this.nextParams = {
+        slug: this.$route.params.slug,
+        media: this.current + 1,
+      };
+    }
+    window.addEventListener('keyup', this.keyPress);
+  },
+  beforeDestroy() {
+    window.removeEventListener('keyup', this.keyPress);
+  },
+  methods: {
+    keyPress(e) {
+      if (e.keyCode === 37) {
+        // Previous page
+        this.$router.push({ name: this.$route.name, params: this.prevParams });
+      } else if (e.keyCode === 39) {
+        // Next page
+        this.$router.push({ name: this.$route.name, params: this.nextParams });
+      } else if (e.keyCode === 27) {
+        this.$router.push({
+          path: this.$route.path.substring(
+            0,
+            this.$route.path.lastIndexOf('/')
+          ),
+        });
+      }
+    },
   },
 };
 </script>

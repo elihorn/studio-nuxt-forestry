@@ -15,5 +15,11 @@ export default {
       return this.$nuxt._route.name.split('-');
     },
   },
+  mounted() {
+    // Clear locaStorage saved position
+    window.onbeforeunload = function (e) {
+      localStorage.savedPosition = undefined;
+    };
+  },
 };
 </script>

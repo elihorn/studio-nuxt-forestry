@@ -1,31 +1,3 @@
-/* Typography */
-$line-height: 1.5;
-
-/* Layout */
-$mq-sm: 40rem;
-$margin-page: 1rem;
-$margin-col: 1rem;
-$sidebar-width: 20%;
-
-@mixin sidebar {
-  width: 100%;
-  @media (min-width: $mq-sm) {
-    position: fixed;
-    left: 0;
-    width: $sidebar-width;
-    order: 1;
-  }
-}
-
-@mixin main {
-  width: 100%;
-  @media (min-width: $mq-sm) {
-    width: 100% - $sidebar-width;
-    order: 2;
-    margin-left: auto;
-  }
-}
-
 /* Set up a baseline environment. */
 @import '~easings.scss';
 @import './app/typography';
@@ -46,27 +18,45 @@ $sidebar-width: 20%;
 
 @import './app/transitions/default';
 @import './app/transitions/slide';
-@import './app/layouts/base';
-@import './app/layouts/posts';
+@import './app/layouts/layout';
+@import './app/layouts/index';
+@import './app/layouts/index-grid';
+@import './app/layouts/index-offset';
+@import './app/layouts/slug';
 @import './app/components/header';
 @import './app/components/main';
 @import './app/components/footer';
 @import './app/components/nextprev';
 
+$fonts: (
+  1: 'Bradford Trial',
+  2: 'Bradford Mono Trial',
+  3: 'Messina Serif Trial',
+  4: 'Archive Pro',
+  5: 'Untitled Serif Test',
+  6: 'Untitled Sans Test',
+  7: 'Rongel Trial',
+  8: 'Dozza Trial',
+);
+@function font($font) {
+  @return map-get($fonts, $font);
+}
 /* Global variables below */
 
 :root {
   --bu: calc(0.5vw);
 
   /*Font familia */
-  --font: 'New York Medium', 'Basis Grotesque Pro', sans-serif;
+  --font: #{font(5)}, monospace;
+  --font-weight: 400;
+  --font-2: #{font(6)};
 
-  --font-size: 12px;
-  --line-height: 1.5;
+  --font-size: 14px;
+  --line-height: 1.3;
 
-  --color-fg: #000000;
+  --color-fg: #464c53;
+  --color-fg-inv: #beb9b0;
   --color-bg: #fff;
-  --color-bg2: #;
   --color-border: #ffffff;
 
   --column-width: 15em;

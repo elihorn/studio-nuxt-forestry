@@ -1,17 +1,35 @@
 <template>
   <div class="post">
     <div class="post-media">
-      <figure :class="{ zoom: zoom }" @click="zoom = !zoom">
+      <figure :class="{ zoom: zoom }" @click="zoomImage">
         <nuxt-image
+          v-if="!zoom"
           :src="post.media[current].file"
           :alt="post.title"
-          sizes="300,600:600,900"
+          sizes="300,600:600,700"
           fit="contain"
+          class="scaled"
+        />
+        <nuxt-image
+          v-if="zoom"
+          :src="post.media[current].file"
+          :alt="post.title"
+          fit="contain"
+          class="unscaled"
         />
       </figure>
     </div>
     <div class="post-body">
-      <h3>{{ post.media[current].title || post.title }}</h3>
+      <h3>
+        {{ post.media[current].title || post.title }}
+        <span v-if="post.media.length > 1" class="count">
+          (
+          <span>{{ current + 1 }}</span>
+          /
+          <span>{{ post.media.length }}</span>
+          )
+        </span>
+      </h3>
       <div
         v-if="post.media[current].caption"
         v-html="post.media[current].caption"
@@ -46,6 +64,11 @@ export default {
         (e.clientY / e.view.innerHeight) * 100 + '%'
       );
     });
+  },
+  methods: {
+    zoomImage(e) {
+      this.zoom = !this.zoom;
+    },
   },
 };
 </script>

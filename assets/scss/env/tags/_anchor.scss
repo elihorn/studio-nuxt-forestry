@@ -1,13 +1,13 @@
 a {
-    color: var(--bc);
-    text-decoration: none;
-    text-rendering: optimizelegibility;
+  color: currentColor;
+  text-decoration: none;
+  text-rendering: optimizelegibility;
+  outline: 0;
+  &:focus,
+  &:active,
+  &:hover {
     outline: 0;
-    &:focus,
-    &:active,
-    &:hover {
-        outline: violet;
-    }
+  }
 }
 
 a:not([class]) {
@@ -17,6 +17,5 @@ a:not([class]) {
 a {
   &:hover {
     border-radius: 50%;
-    background: var(--color-bg2);
   }
 }

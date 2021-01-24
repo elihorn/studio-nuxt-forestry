@@ -1,10 +1,11 @@
 ---
-title: Grief 1
-slug: grief-1
+title: Grief
+slug: grief
 image: uploads/Eli-Horn_012.jpg
 media:
   - file: uploads/Eli-Horn_012.jpg
+  - file: uploads/Eli-Horn_013.jpg
 ---
 
-Etching on paper  
+Wax crayon on paper  
 23 x 56 cm

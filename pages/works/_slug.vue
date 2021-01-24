@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-  async asyncData({ app, $content, params, error, route }) {
+  async asyncData({ app, $content, params, error, route, store }) {
     try {
       const name = route.name.split('-')[0];
       const post = await $content(name, params.slug).fetch();
@@ -29,9 +29,11 @@ export default {
         const prevPost = await $content(name, prev.slug).fetch();
         prevCount = prevPost.media.length - 1;
       }
+      store.commit('works/add', index);
       return {
         name,
         post,
+        index,
         prev,
         next,
         prevCount,
