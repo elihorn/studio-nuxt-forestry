@@ -50,8 +50,7 @@ export default {
   },
   data() {
     return {
-      // api_url: process.env.strapiBaseUri + '/',
-      api_url: '/',
+      api_url: process.env.strapiBaseUri + '/',
       current: parseInt(this.$route.params.media) || 0,
       zoom: false,
     };
