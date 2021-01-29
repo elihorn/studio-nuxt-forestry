@@ -8,23 +8,14 @@
         @mouseover.native="activePost = post"
       >
         <div class="post-media">
-          <!-- <nuxt-image
-            v-if="post.image === 'random'"
-            :src="
-              post.media[Math.floor(Math.random() * post.media.length)].file
-            "
-            :alt="post.title"
-            sizes="300,600:600"
-            fit="contain"
-            class="image-container"
-          /> -->
           <nuxt-img
             :src="api_url + post.image"
             :alt="post.title"
             responsive
             sizes="300,600:600"
+            fit="contain"
             class="image-container"
-            format="webp"
+            quality="90"
           />
         </div>
         <div class="post-body">
