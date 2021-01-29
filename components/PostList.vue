@@ -21,8 +21,8 @@
           <nuxt-img
             :src="api_url + post.image"
             :alt="post.title"
+            responsive
             sizes="300,600:600"
-            fit="contain"
             class="image-container"
             format="webp"
           />

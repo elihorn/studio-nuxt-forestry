@@ -6,8 +6,8 @@
           v-if="!zoom"
           :src="api_url + post.media[current].file"
           :alt="post.title"
+          responsive
           sizes="300,600:600,700"
-          fit="contain"
           class="scaled"
           format="webp"
         />
@@ -15,7 +15,6 @@
           v-if="zoom"
           :src="api_url + post.media[current].file"
           :alt="post.title"
-          fit="contain"
           class="unscaled"
           format="webp"
         />
