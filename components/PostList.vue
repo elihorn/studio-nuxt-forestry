@@ -56,12 +56,7 @@ export default {
   },
   data() {
     return {
-<<<<<<< HEAD
-      api_url: '/',
-      // api_url: process.env.strapiBaseUri + '/',
-=======
       api_url: process.env.strapiBaseUri + '/',
->>>>>>> 2174798bd41cbce21d8d53d4a9f84175453dcae6
       activePost: false,
     };
   },
