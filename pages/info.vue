@@ -1,5 +1,5 @@
 <template>
-  <article id="content" class="slug">
+  <article id="content" class="page">
     <nuxt-content :document="post" />
   </article>
 </template>
@@ -7,8 +7,8 @@
 export default {
   async asyncData({ app, $content, params, error, route, store }) {
     try {
-      const name = route.name.split('-')[0];
-      const post = await $content(name, params.slug).fetch();
+      const post = await $content('info').fetch();
+      console.log(post);
       return {
         post,
       };

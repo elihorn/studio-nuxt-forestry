@@ -1,57 +1,57 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: 
-webhook_url: 
+admin_path:
+webhook_url:
 sections:
-- type: heading
-  label: Content
-- type: directory
-  path: content/works
-  label: Works
-  create: documents
-  match: "**/*"
-  templates:
-  - works
-- type: directory
-  path: content/exercise
-  label: Exercise
-  create: documents
-  match: "**/*"
-  templates:
-  - works-2
-- type: directory
-  path: content/projects
-  label: Projects
-  create: all
-  match: "**/*"
-  templates:
-  - projects
-- type: directory
-  path: content/data/indexes
-  label: Indexes
-  create: documents
-  match: "**/*"
-  new_doc_ext: json
-  templates:
-  - indexes
-- type: document
-  path: content/data/info.json
-  label: Info Page
-- type: heading
-  label: Config
-- type: document
-  path: content/data/config.json
-  label: Site Info
+  - type: heading
+    label: Content
+  - type: directory
+    path: content/works
+    label: Works
+    create: documents
+    match: '**/*'
+    templates:
+      - works
+  - type: directory
+    path: content/exercise
+    label: Exercise
+    create: documents
+    match: '**/*'
+    templates:
+      - works-2
+  - type: directory
+    path: content/projects
+    label: Projects
+    create: all
+    match: '**/*'
+    templates:
+      - projects
+  - type: directory
+    path: content/data/indexes
+    label: Indexes
+    create: documents
+    match: '**/*'
+    new_doc_ext: json
+    templates:
+      - indexes
+  - type: document
+    path: content/info.md
+    label: Info
+  - type: heading
+    label: Config
+  - type: document
+    path: content/data/config.json
+    label: Site Info
 upload_dir: static/uploads
 public_path: uploads
 front_matter_path: ''
 use_front_matter_path: false
-file_template: ":filename:"
+file_template: ':filename:'
 build:
-  preview_output_directory: ".nuxt"
+  preview_output_directory: '.nuxt'
   install_dependencies_command: yarn install
   preview_docker_image: node:10
-  mount_path: "/srv"
-  working_dir: "/srv"
+  mount_path: '/srv'
+  working_dir: '/srv'
   instant_preview_command: yarn forestry-preview

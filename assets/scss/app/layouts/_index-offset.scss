@@ -15,10 +15,19 @@
           float: left;
           height: 0;
         }
+        img {
+          max-height: 75vh;
+          min-height: 15em;
+        }
         &:nth-child(2n) {
           .post-link {
             margin-top: 100%;
             margin-bottom: -100%;
+          }
+        }
+        &:nth-child(4n) {
+          img {
+            margin-left: auto;
           }
         }
         &:last-child {

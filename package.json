@@ -13,22 +13,22 @@
     "forestry-preview": "nuxt -p 8080 -H 0.0.0.0"
   },
   "dependencies": {
-    "@nuxt/content": "^1.12.0",
-    "easings.scss": "^0.3.0",
-    "frontmatter-markdown-loader": "^3.6.2",
-    "node-sass": "^5.0.0",
-    "nuxt": "^2.0.0",
-    "sass-loader": "^10.1.0",
-    "vue-scroll-behavior": "^0.3.0",
-    "@nuxt/image": "^0.2.1",
-    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxt/content": "^1.14.0",
+    "@nuxt/image": "^0.5.0",
+    "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.1",
     "babel-eslint": "^10.0.1",
-    "eslint": "^7.18.0",
-    "eslint-config-prettier": "^7.2.0",
+    "easings.scss": "^0.3.1",
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-plugin-prettier": "^3.0.1",
-    "nodemon": "^2.0.6",
-    "prettier": "^2.2.1"
+    "eslint-plugin-prettier": "^3.4.0",
+    "frontmatter-markdown-loader": "^3.6.3",
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.12",
+    "nuxt": "^2.15.7",
+    "prettier": "^2.3.2",
+    "sass-loader": "^10.1.1",
+    "vue-scroll-behavior": "^0.3.0"
   }
 }

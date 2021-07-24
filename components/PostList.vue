@@ -9,13 +9,13 @@
       >
         <div class="post-media">
           <nuxt-img
-            :src="api_url + post.image"
+            :src="post.image"
             :alt="post.title"
-            responsive
             sizes="300,600:600"
             fit="contain"
             class="image-container"
             quality="90"
+            format="webp"
           />
         </div>
         <div class="post-body">

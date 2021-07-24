@@ -1,8 +1,13 @@
 a {
   color: currentColor;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
+  text-decoration-skip: edges;
+  text-underline-offset: 0.1em;
+  text-decoration-thickness: 1px;
   text-rendering: optimizelegibility;
   outline: 0;
+
   &:focus,
   &:active,
   &:hover {
@@ -10,12 +15,16 @@ a {
   }
 }
 
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+.link {
+  cursor: pointer;
 }
 
-a {
-  &:hover {
-    border-radius: 50%;
+.close {
+  text-indent: -100%;
+  line-height: 0;
+  &:after {
+    content: '\21B0';
+    display: inline;
+    text-indent: 0;
   }
 }
