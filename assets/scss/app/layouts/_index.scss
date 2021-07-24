@@ -16,6 +16,7 @@
           z-index: 10;
           min-width: 25em;
           pointer-events: none;
+          transition: none;
         }
         &.active {
           .post-body {

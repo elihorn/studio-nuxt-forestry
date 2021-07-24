@@ -15,10 +15,6 @@
           float: left;
           height: 0;
         }
-        img {
-          max-height: 75vh;
-          min-height: 15em;
-        }
         &:nth-child(2n) {
           .post-link {
             margin-top: 100%;
@@ -35,11 +31,6 @@
             margin-bottom: 0;
           }
         }
-        .post-link {
-          max-width: 20em;
-          margin-left: auto;
-          margin-right: auto;
-        }
         &:nth-child(4n),
         &:nth-child(4n - 1) {
           .post-link {
@@ -55,7 +46,16 @@
           }
         }
         .post-link {
+          max-width: 20em;
+          margin-left: auto;
+          margin-right: auto;
           width: 100%;
+          position: relative;
+          z-index: 2;
+        }
+        img {
+          max-height: 75vh;
+          min-height: 15em;
         }
       }
     }
