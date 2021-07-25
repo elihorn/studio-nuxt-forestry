@@ -60,11 +60,11 @@ $small: 0.8em;
 $fonts: (
   1: 'Bradford Trial',
   2: 'Bradford Mono Trial',
-  3: 'Messina Serif Trial',
+  3: 'Suisse Works',
   4: 'SF Pro Display',
   5: 'Untitled Serif Test',
   6: 'Untitled Sans Test',
-  7: 'Self Modern',
+  7: 'Post Grotesk',
 );
 @function font($font) {
   @return map-get($fonts, $font);
@@ -76,15 +76,15 @@ $fonts: (
   --bu: calc(0.5vw);
 
   /*Font familia */
-  --font: #{font(6)}, monospace;
-  --font-weight: 600;
-  --font-2: #{font(6)};
+  --font: #{font(3)}, monospace;
+  --font-weight: 400;
+  --font-2: #{font(3)};
 
   --font-size: 16px;
   --line-height: 1.1;
 
-  --color-fg: #111;
-  --color-fg-inv: #eee;
+  --color-fg: #006f6f;
+  --color-fg-inv: #ff9090;
   --color-bg: #fff;
   --color-border: #ffffff;
 
@@ -96,8 +96,8 @@ $fonts: (
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-fg: #eee;
-    --color-fg-inv: #eee;
+    --color-fg: #bcadca;
+    --color-fg-inv: --color-fg;
     --color-bg: #000;
     --color-border: #ffffff;
   }

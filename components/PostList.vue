@@ -16,6 +16,7 @@
             class="image-container"
             quality="90"
             format="webp"
+            loading="lazy"
           />
         </div>
         <div class="post-body">

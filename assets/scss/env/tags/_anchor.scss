@@ -13,6 +13,10 @@ a {
   &:hover {
     outline: 0;
   }
+
+  &.nuxt-link-exact-active {
+    cursor: default;
+  }
 }
 
 .link {

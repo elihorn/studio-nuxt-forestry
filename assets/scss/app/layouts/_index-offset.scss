@@ -1,10 +1,11 @@
 #content.index {
   .layout-offset {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
   @media (min-width: $mq-sm) {
     .layout-offset {
+      grid-template-columns: 1fr 1fr;
       .post {
         &:not(:last-child)::before {
           content: '';
@@ -16,10 +17,8 @@
           height: 0;
         }
         &:nth-child(2n) {
-          .post-link {
-            margin-top: 100%;
-            margin-bottom: -100%;
-          }
+          margin-top: 100%;
+          margin-bottom: -100%;
         }
         &:nth-child(4n) {
           img {
@@ -27,9 +26,7 @@
           }
         }
         &:last-child {
-          .post-link {
-            margin-bottom: 0;
-          }
+          margin-bottom: 0;
         }
         &:nth-child(4n),
         &:nth-child(4n - 1) {
@@ -50,8 +47,6 @@
           margin-left: auto;
           margin-right: auto;
           width: 100%;
-          position: relative;
-          z-index: 2;
         }
         img {
           max-height: 75vh;
