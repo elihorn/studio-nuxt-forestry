@@ -1,6 +1,16 @@
 ---
 label: Indexes
 hide_body: false
-fields: []
+fields:
+- name: slug
+  type: list
+  config:
+    use_select: true
+    min: 
+    max: 
+    source:
+      type: pages
+      section: works
+  label: Slug
 pages:
 - content/data/indexes/works-index.json
