@@ -6,21 +6,17 @@
           v-if="!zoom"
           :src="post.media[current].file"
           :alt="post.title"
-          sizes="sm:100vw,640"
+          sizes="md:100vw sm:100vw xs:100vw"
           fit="contain"
           class="scaled"
           quality="90"
           format="webp"
         />
-        <nuxt-img
+        <img
           v-if="zoom"
-          :src="post.media[current].file"
+          :src="api_url + post.media[current].file"
           :alt="post.title"
-          fit="contain"
-          width="original"
           class="unscaled"
-          quality="100"
-          format="webp"
         />
       </figure>
     </div>

@@ -11,7 +11,7 @@
           <nuxt-img
             :src="post.image"
             :alt="post.title"
-            sizes="300,600:600"
+            sizes="md:100vw sm:100vw xs:100vw"
             fit="contain"
             class="image-container"
             quality="90"
