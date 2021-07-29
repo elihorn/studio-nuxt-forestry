@@ -14,13 +14,6 @@ sections:
   templates:
   - works
 - type: directory
-  path: content/exercise
-  label: Exercise
-  create: documents
-  match: "**/*"
-  templates:
-  - works-2
-- type: directory
   path: content/projects
   label: Projects
   create: all
