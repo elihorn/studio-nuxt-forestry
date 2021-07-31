@@ -2,6 +2,8 @@
 title: Trials 2
 slug: trials-2
 image: uploads/trials-c_med2.jpg
+media:
+  - file: uploads/trials-c_med2.jpg
 ---
 
 Mixed media on paper  

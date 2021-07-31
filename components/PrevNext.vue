@@ -49,6 +49,7 @@ export default {
     };
   },
   mounted() {
+    console.log(this.$route);
     if (this.prev) {
       this.prevParams = { slug: this.prev.slug };
     }

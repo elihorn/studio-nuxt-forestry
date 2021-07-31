@@ -13,9 +13,7 @@
         <li>
           <nuxt-link to="/works">Works</nuxt-link>
         </li>
-        <li>
-          <nuxt-link to="/projects">Projects</nuxt-link>
-        </li>
+        <li class="spacer">&nbsp;</li>
       </ul>
     </nav>
   </div>
