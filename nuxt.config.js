@@ -12,11 +12,19 @@ export default {
   target: 'static',
   modern: dev ? false : 'client',
   generate: {
-    routes() {
-      const toGenerate = [];
-      routes.paths.forEach((element) => toGenerate.push(element));
-      return toGenerate;
-    },
+    async routes() {
+      const { $content } = require('@nuxt/content')
+      const works = await $content('works').only(['path', 'media']).fetch()
+      const workMedia = []
+      works.forEach(work => {
+        if (work.media?.length > 1) {
+          work.media.slice(1).forEach((e, i) => {
+            workMedia.push(work.path + "/" + (i + 1))
+          })
+        }
+      })
+      return workMedia
+    }
   },
   /*
    ** Headers of the page
@@ -57,7 +65,7 @@ export default {
    */
   modules: ['@nuxt/content', '@nuxt/image'],
   content: {
-    nestedProperties: ['author.name, works.media'],
+    nestedProperties: ['works.slug.media'],
   },
   image: {
     screens: {
@@ -70,4 +78,5 @@ export default {
       '2xl': 1536,
     },
   },
+
 };
