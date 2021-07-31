@@ -1,5 +1,6 @@
 /* eslint-disable */
 const config = require('./content/data/config.json');
+const routes = require('./static/routes.json');
 /* eslin-enable */
 const dev =
   process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test';
@@ -10,6 +11,13 @@ export default {
   },
   target: 'static',
   modern: dev ? false : 'client',
+  generate: {
+    routes() {
+      const toGenerate = [];
+      routes.paths.forEach((element) => toGenerate.push(element));
+      return toGenerate;
+    },
+  },
   /*
    ** Headers of the page
    */
@@ -49,7 +57,7 @@ export default {
    */
   modules: ['@nuxt/content', '@nuxt/image'],
   content: {
-    nestedProperties: ['author.name'],
+    nestedProperties: ['author.name, works.media'],
   },
   image: {
     screens: {

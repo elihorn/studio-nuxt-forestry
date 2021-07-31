@@ -22,7 +22,7 @@
         <div class="post-body">
           <h3>
             {{ post.title }}
-            <span v-if="post.media.length > 1" class="count">
+            <span v-if="post.media && post.media.length > 1" class="count">
               (
               <span>{{ post.media.length }}</span>
               )
