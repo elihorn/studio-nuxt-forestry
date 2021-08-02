@@ -7,6 +7,7 @@
       :next="next"
       :count="post.media.length"
       :prev-count="prevCount"
+      :post="post"
     />
   </article>
 </template>

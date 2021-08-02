@@ -7,7 +7,8 @@
       :prev="prev"
       :count="post.media.length"
       :prev-count="prevCount"
-      :route="routeName"
+      :post="post"
+      :name="routeName"
     />
   </article>
 </template>
@@ -25,15 +26,17 @@ export default {
         app.$mapOrder(posts, index, 'slug');
       }
       const post = await $content('works', posts[0].slug).fetch();
-      const next = await $content('works', posts[1].slug).fetch();
+      console.log(post);
+      const nextPost = post.media.length > 1 ? posts[0] : posts[1];
+      const next = await $content('works', nextPost.slug).fetch();
       const prev = null;
       const prevCount = 0;
       store.commit('works/add', index);
       return {
         name,
         routeName,
-        post,
         index,
+        post,
         prev,
         next,
         prevCount,
@@ -45,4 +48,3 @@ export default {
   },
 };
 </script>
-

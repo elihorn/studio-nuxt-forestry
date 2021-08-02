@@ -11,7 +11,12 @@
           </span>
         </li>
         <li>
-          <nuxt-link to="/works">Works</nuxt-link>
+          <nuxt-link
+            :class="{ 'nuxt-link-active': $route.name == 'index' }"
+            to="/works"
+          >
+            Works
+          </nuxt-link>
         </li>
         <li class="spacer">&nbsp;</li>
       </ul>

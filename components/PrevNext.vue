@@ -3,7 +3,7 @@
     <nuxt-link
       v-if="prevParams"
       :to="{
-        name: $route.name,
+        name: routeName,
         params: prevParams,
       }"
       class="prev"
@@ -12,7 +12,7 @@
     </nuxt-link>
     <nuxt-link
       v-if="nextParams"
-      :to="{ name: $route.name, params: nextParams }"
+      :to="{ name: routeName, params: nextParams }"
       class="next"
     >
       {{ nextText }}
@@ -38,6 +38,14 @@ export default {
       type: Number,
       default: 1,
     },
+    post: {
+      type: Object,
+      default: () => null,
+    },
+    name: {
+      type: String,
+      default: undefined,
+    },
   },
   data() {
     return {
@@ -46,10 +54,15 @@ export default {
       nextText: 'Next',
       prevParams: false,
       nextParams: false,
+      routeName: this.$route.name,
     };
   },
   mounted() {
-    console.log(this.$route);
+    if (this.name) {
+      this.routeName = this.name;
+    }
+    console.log(this.$route.name, this.routeName);
+    console.log(this.current);
     if (this.prev) {
       this.prevParams = { slug: this.prev.slug };
     }
@@ -58,17 +71,17 @@ export default {
     }
     if (this.current > 1) {
       this.prevParams = {
-        slug: this.$route.params.slug,
+        slug: this.post.slug,
         media: this.current - 1,
       };
     } else if (this.current > 0) {
-      this.prevParams = { slug: this.$route.params.slug };
+      this.prevParams = { slug: this.post.slug };
     } else if (this.prev && this.prevCount > 0) {
       this.prevParams = { slug: this.prev.slug, media: this.prevCount };
     }
     if (this.current < this.count - 1) {
       this.nextParams = {
-        slug: this.$route.params.slug,
+        slug: this.post.slug,
         media: this.current + 1,
       };
     }
@@ -81,16 +94,15 @@ export default {
     keyPress(e) {
       if (e.keyCode === 37) {
         // Previous page
-        this.$router.push({ name: this.$route.name, params: this.prevParams });
+        this.$router.push({ name: this.routeName, params: this.prevParams });
       } else if (e.keyCode === 39) {
         // Next page
-        this.$router.push({ name: this.$route.name, params: this.nextParams });
+        this.$router.push({ name: this.routeName, params: this.nextParams });
       } else if (e.keyCode === 27) {
+        const routePath =
+          typeof this.post !== 'undefined' ? this.post.path : this.$route.path;
         this.$router.push({
-          path: this.$route.path.substring(
-            0,
-            this.$route.path.lastIndexOf('/')
-          ),
+          path: routePath.substring(0, routePath.lastIndexOf('/')),
         });
       }
     },
