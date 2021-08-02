@@ -7,7 +7,7 @@
       :prev="prev"
       :count="post.media.length"
       :prev-count="prevCount"
-      :route="customRoute"
+      :route="routeName"
     />
   </article>
 </template>
@@ -16,7 +16,7 @@ export default {
   async asyncData({ app, $content, params, error, route, store }) {
     try {
       const name = 'works';
-      const customRoute = 'works-slug-media';
+      const routeName = 'works-slug-media';
       const posts = await $content(name).only(['title', 'slug']).fetch();
       const { index } = await $content('data/indexes/' + name + '-index')
         .only('index')
@@ -31,7 +31,7 @@ export default {
       store.commit('works/add', index);
       return {
         name,
-        customRoute,
+        routeName,
         post,
         index,
         prev,

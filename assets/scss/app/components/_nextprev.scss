@@ -1,14 +1,13 @@
 .post-nav {
-  position: fixed;
-  bottom: $margin-page;
-  right: $margin-page;
-  z-index: 5;
+  @include sidebar;
+  z-index: 10;
   a {
     position: relative;
     display: block;
     overflow: hidden;
     text-indent: -9999px;
     width: 1em;
+    float: left;
     &:after {
       text-indent: 0;
       float: left;
@@ -23,5 +22,8 @@
         content: '\2192';
       }
     }
+  }
+  @media (min-width: $mq-sm) {
+      bottom: 0;
   }
 }

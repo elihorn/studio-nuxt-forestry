@@ -6,15 +6,26 @@ $sidebar-width: 10em;
 $small: 0.8em;
 
 /* Mixins */
+@mixin invert {
+  mix-blend-mode: difference;
+  color: var(--color-fg-inv);
+  a {
+    &:focus,
+    &:active,
+    &:hover {
+      color: var(--color-hov-inv);
+    }
+  }
+}
 @mixin sidebar {
   width: 100%;
   @media (min-width: $mq-sm) {
     position: fixed;
     left: 0;
     width: $sidebar-width;
+    padding: $margin-col + $margin-page;
     order: 1;
-    mix-blend-mode: difference;
-    color: var(--color-fg-inv);
+    @include invert;
   }
 }
 @mixin main {
@@ -85,6 +96,8 @@ $fonts: (
 
   --color-fg: #006f6f;
   --color-fg-inv: #ff9090;
+  --color-hov: #ff9090;
+  --color-hov-inv: #006f6f;
   --color-bg: #fff;
   --color-border: #ffffff;
 
@@ -97,7 +110,7 @@ $fonts: (
 @media (prefers-color-scheme: dark) {
   :root {
     --color-fg: #bcadca;
-    --color-fg-inv: --color-fg;
+    --color-fg-inv: #006f6f;
     --color-bg: #000;
     --color-border: #ffffff;
   }

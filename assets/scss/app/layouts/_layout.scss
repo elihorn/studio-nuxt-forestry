@@ -7,7 +7,6 @@
 }
 #header {
   @include sidebar;
-  padding: $margin-col * 2;
   z-index: 5;
 }
 #content {
@@ -27,8 +26,7 @@
   }
   @media (min-width: $mq-sm) {
     .post-body {
-      padding: $margin-col * 2;
-      bottom: 0;
+      bottom: calc(var(--line-height) * 1em);
     }
   }
 }
