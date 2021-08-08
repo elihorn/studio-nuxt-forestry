@@ -1,6 +1,6 @@
 <template>
   <ul class="post-list layout-offset">
-    <li v-for="post in posts" :key="post.slug" class="post">
+    <li v-for="(post, index) in posts" :key="post.slug" class="post">
       <nuxt-link
         :to="{ name: name + '-slug-media', params: { slug: post.slug } }"
         :class="[{ active: activePost === post }, `post-link`]"
@@ -11,12 +11,13 @@
           <nuxt-img
             :src="post.image"
             :alt="post.title"
+            :placeholder="true"
             sizes="md:100vw sm:100vw xs:100vw"
             fit="contain"
             class="image-container"
             quality="90"
             format="webp"
-            loading="lazy"
+            :loading="index > 2 ? 'lazy' : null"
           />
         </div>
         <div class="post-body">
@@ -50,6 +51,7 @@ export default {
     return {
       api_url: process.env.strapiBaseUri + '/',
       activePost: false,
+      images: [],
     };
   },
 };

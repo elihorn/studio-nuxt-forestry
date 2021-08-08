@@ -2,8 +2,25 @@
   <div class="post">
     <div class="post-media">
       <figure :class="{ zoom: zoom }" @click="zoomImage">
+        <svg class="svgFilter">
+          <filter id="sharpBlur">
+            <feGaussianBlur stdDeviation="13"></feGaussianBlur>
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 9 0"
+            ></feColorMatrix>
+            <feComposite in2="SourceGraphic" operator="in"></feComposite>
+          </filter>
+        </svg>
         <nuxt-img
-          v-if="!zoom"
+          :src="post.media[current].file"
+          width="50"
+          fit="contain"
+          class="svgBlur placeholder"
+          quality="50"
+          format="webp"
+        />
+        <nuxt-img
           :src="post.media[current].file"
           :alt="post.title"
           sizes="md:100vw sm:100vw xs:100vw"

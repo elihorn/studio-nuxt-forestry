@@ -13,18 +13,18 @@ export default {
   modern: dev ? false : 'client',
   generate: {
     async routes() {
-      const { $content } = require('@nuxt/content')
-      const works = await $content('works').only(['path', 'media']).fetch()
-      const workMedia = []
-      works.forEach(work => {
+      const { $content } = require('@nuxt/content');
+      const works = await $content('works').only(['path', 'media']).fetch();
+      const workMedia = [];
+      works.forEach((work) => {
         if (work.media?.length > 1) {
           work.media.slice(1).forEach((e, i) => {
-            workMedia.push(work.path + "/" + (i + 1))
-          })
+            workMedia.push(work.path + '/' + (i + 1));
+          });
         }
-      })
-      return workMedia
-    }
+      });
+      return workMedia;
+    },
   },
   /*
    ** Headers of the page
@@ -78,5 +78,4 @@ export default {
       '2xl': 1536,
     },
   },
-
 };

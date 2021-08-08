@@ -6,3 +6,19 @@ img {
   border: none;
   box-shadow: none;
 }
+
+/* SVG filter for blurring placeholder images */
+.svgBlur {
+  -webkit-filter: url('#sharpBlur');
+  filter: url('#sharpBlur');
+}
+.svgFilter {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
