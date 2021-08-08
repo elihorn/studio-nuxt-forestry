@@ -21,6 +21,7 @@
           format="webp"
         />
         <nuxt-img
+          v-if="!zoom"
           :src="post.media[current].file"
           :alt="post.title"
           sizes="md:100vw sm:100vw xs:100vw"
@@ -69,6 +70,7 @@ export default {
       api_url: process.env.strapiBaseUri + '/',
       current: parseInt(this.$route.params.media) || 0,
       zoom: false,
+      zoomLoaded: false,
     };
   },
   beforeMount() {
@@ -85,8 +87,18 @@ export default {
     });
   },
   methods: {
-    zoomImage(e) {
+    zoomImage() {
+      if (!this.zoom && !this.zoomLoaded) {
+        this.loadZoom();
+      }
       this.zoom = !this.zoom;
+    },
+    loadZoom() {
+      const img = new Image();
+      img.onload = function () {
+        this.zoomLoaded = true;
+      };
+      img.src = this.api_url + this.post.media[this.current].file;
     },
   },
 };
