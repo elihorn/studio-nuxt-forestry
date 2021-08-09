@@ -49,7 +49,12 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/mapOrder.js', '~/plugins/surround.js'],
+  plugins: [
+    '~/plugins/mapOrder.js',
+    '~/plugins/surround.js',
+    '~/plugins/animateOnScroll.client.js',
+    '~/plugins/customCursor.client.js',
+  ],
 
   /*
    ** Auto import components

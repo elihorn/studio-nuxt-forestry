@@ -26,7 +26,6 @@ export default {
         app.$mapOrder(posts, index, 'slug');
       }
       const post = await $content('works', posts[0].slug).fetch();
-      console.log(post);
       const nextPost = post.media.length > 1 ? posts[0] : posts[1];
       const next = await $content('works', nextPost.slug).fetch();
       const prev = null;

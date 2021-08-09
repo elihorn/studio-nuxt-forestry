@@ -19,6 +19,7 @@
           class="svgBlur placeholder"
           quality="50"
           format="webp"
+          loading="lazy"
         />
         <nuxt-img
           v-if="!zoom"

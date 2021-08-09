@@ -9,7 +9,8 @@ $small: 0.8em;
 @mixin invert {
   mix-blend-mode: difference;
   color: var(--color-fg-inv);
-  a {
+  a,
+  .link {
     &:focus,
     &:active,
     &:hover {
@@ -67,6 +68,7 @@ $small: 0.8em;
 @import './app/components/main';
 @import './app/components/footer';
 @import './app/components/nextprev';
+@import './app/components/customcursor';
 
 $fonts: (
   1: 'Bradford Trial',

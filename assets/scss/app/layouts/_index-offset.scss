@@ -1,58 +1,57 @@
 #content.index {
   .layout-offset {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr 1fr;
+    .post {
+      &:not(:last-child)::before {
+        content: '';
+        display: block;
+        padding-bottom: calc(200% - #{$margin-col * 2});
+        width: 1px;
+        margin-right: -1px;
+        float: left;
+        height: 0;
+      }
+      &:nth-child(2n) {
+        margin-top: 100%;
+        margin-bottom: -100%;
+      }
+      &:nth-child(4n) {
+        img {
+          margin-left: auto;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:nth-child(4n),
+      &:nth-child(4n - 1) {
+        .post-link {
+          margin-right: 0;
+          margin-left: auto;
+        }
+      }
+      &:nth-child(6n),
+      &:nth-child(6n - 1) {
+        .post-link {
+          margin-left: 0;
+          margin-right: auto;
+        }
+      }
+      .post-link {
+        max-width: 20em;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+      img {
+        max-height: 75vh;
+      }
+    }
   }
   @media (min-width: $mq-sm) {
     .layout-offset {
       grid-template-columns: 1fr 1fr;
-      .post {
-        &:not(:last-child)::before {
-          content: '';
-          display: block;
-          padding-bottom: calc(200% - #{$margin-col * 2});
-          width: 1px;
-          margin-right: -1px;
-          float: left;
-          height: 0;
-        }
-        &:nth-child(2n) {
-          margin-top: 100%;
-          margin-bottom: -100%;
-        }
-        &:nth-child(4n) {
-          img {
-            margin-left: auto;
-          }
-        }
-        &:last-child {
-          margin-bottom: 0;
-        }
-        &:nth-child(4n),
-        &:nth-child(4n - 1) {
-          .post-link {
-            margin-right: 0;
-            margin-left: auto;
-          }
-        }
-        &:nth-child(6n),
-        &:nth-child(6n - 1) {
-          .post-link {
-            margin-left: 0;
-            margin-right: auto;
-          }
-        }
-        .post-link {
-          max-width: 20em;
-          margin-left: auto;
-          margin-right: auto;
-          width: 100%;
-        }
-        img {
-          max-height: 75vh;
-          min-height: 15em;
-        }
-      }
     }
   }
 }

@@ -2,6 +2,7 @@
   <nav class="post-nav">
     <nuxt-link
       v-if="prevParams"
+      v-custom-cursor="'prev'"
       :to="{
         name: routeName,
         params: prevParams,
@@ -12,6 +13,7 @@
     </nuxt-link>
     <nuxt-link
       v-if="nextParams"
+      v-custom-cursor="'next'"
       :to="{ name: routeName, params: nextParams }"
       class="next"
     >
@@ -61,8 +63,6 @@ export default {
     if (this.name) {
       this.routeName = this.name;
     }
-    console.log(this.$route.name, this.routeName);
-    console.log(this.current);
     if (this.prev) {
       this.prevParams = { slug: this.prev.slug };
     }

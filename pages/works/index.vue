@@ -16,7 +16,6 @@ export default {
       const { index } = await $content('data/indexes/' + name + '-index')
         .only('index')
         .fetch();
-      console.log(posts, index);
       if (posts && index) {
         app.$mapOrder(posts, index, 'slug');
       }

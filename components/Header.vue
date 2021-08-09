@@ -2,23 +2,25 @@
   <div id="header">
     <nav>
       <ul class="menu">
-        <li id="root">
+        <li class="nav-link-info">
           <nuxt-link v-if="$route.name != 'info'" to="/info">
             Eli Horn
           </nuxt-link>
-          <span v-else class="link close" @click="to">
-            <p>Close</p>
+          <span v-else class="link close exact-active" @click="to">
+            Eli Horn
           </span>
         </li>
-        <li>
+        <li class="nav-link-works">
           <nuxt-link
             :class="{ 'nuxt-link-active': $route.name == 'index' }"
             to="/works"
           >
-            Works
+            Selected work
           </nuxt-link>
         </li>
-        <li class="spacer">&nbsp;</li>
+        <!-- <li class="nav-link-index">
+          <nuxt-link to="/index">Index</nuxt-link>
+        </li> -->
       </ul>
     </nav>
   </div>

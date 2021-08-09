@@ -1,14 +1,17 @@
 #content.index {
+  padding: $margin-col * 2;
   .post {
-    padding: $margin-col;
+    padding: $margin-col * 2;
     .post-link {
       display: block;
       margin: 0 auto;
       text-decoration: none;
+      .post-body {
+        font-size: $small;
+      }
     }
   }
   @media (min-width: $mq-sm) {
-    padding-left: $sidebar-width;
     .post {
       .post-link {
         .post-body {
@@ -18,6 +21,7 @@
           min-width: 25em;
           pointer-events: none;
           transition: none;
+          font-size: inherit;
         }
         &.active {
           .post-body {

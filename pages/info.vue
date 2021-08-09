@@ -8,7 +8,6 @@ export default {
   async asyncData({ app, $content, params, error, route, store }) {
     try {
       const post = await $content('info').fetch();
-      console.log(post);
       return {
         post,
       };

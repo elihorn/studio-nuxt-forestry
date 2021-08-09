@@ -1,0 +1,18 @@
+#cursor {
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+  top: calc(var(--mouse-y) - 0.5em);
+  left: calc(var(--mouse-x) - 0.5em);
+  mix-blend-mode: difference;
+  &.prev {
+    &:before {
+      content: '\2190';
+    }
+  }
+  &.next {
+    &:before {
+      content: '\2192';
+    }
+  }
+}

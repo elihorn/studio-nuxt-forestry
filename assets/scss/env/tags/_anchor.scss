@@ -21,14 +21,10 @@ a {
 
 .link {
   cursor: pointer;
-}
-
-.close {
-  text-indent: -100%;
-  line-height: 0;
-  &:after {
-    content: '\21B0';
-    display: inline;
-    text-indent: 0;
+  &:focus,
+  &:active,
+  &:hover {
+    color: var(--color-hov);
+    outline: 0;
   }
 }

@@ -3,70 +3,53 @@
     li {
       display: inline;
       width: auto;
+      font-size: $small;
+      a {
+        text-decoration: none;
+      }
       &:not(:last-child) {
         &:after {
           content: ', ';
         }
       }
-      &#root {
+      &:first-child {
         &:after {
           content: ': ';
         }
-      }
-      a {
-        text-decoration: none;
       }
     }
   }
   @media (min-width: $mq-sm) {
     nav {
-      ul {
-        height: 100vh;
-        // height: calc(75vh - #{$margin-col * 4});
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
       li {
-        width: 100%;
         display: block;
         clear: both;
-        // font-size: $small;
         &:not(:last-child),
-        &#root {
+        &:first-child {
           &:after {
             content: '';
           }
         }
-        &:not(#root) {
-          a:not(.nuxt-link-active) {
-            opacity: 0;
-            transition: opacity 1000ms $ease-in-out-circ;
-          }
-        }
       }
-      a {
+      .nuxt-link-active,
+      .exact-active {
+        padding-left: 1em;
+      }
+      .nuxt-link-active:not(.nuxt-link-exact-active),
+      .close {
         position: relative;
+        display: block;
         &:before {
           content: '\21B0';
           position: absolute;
           width: $margin-col * 2;
           left: 0;
-          top: calc(var(--line-height) * -1em);
-          opacity: 0;
-          // transition: opacity 200ms $ease-in-out-circ;
-        }
-        &.nuxt-link-active:not(.nuxt-link-exact-active) {
-          &:before {
-            opacity: 1;
-            // transition: none;
-          }
+          top: calc(var(--line-height) * -0.25em);
         }
       }
       &:hover {
         ul.menu {
-          li:not(#root) {
+          li:not(.nav-link-info) {
             a {
               opacity: 1;
               transition: none;
