@@ -1,18 +1,33 @@
-#cursor {
-  position: absolute;
-  z-index: 999;
-  pointer-events: none;
-  top: calc(var(--mouse-y) - 0.5em);
-  left: calc(var(--mouse-x) - 0.5em);
-  mix-blend-mode: difference;
-  &.prev {
-    &:before {
-      content: '\2190';
+@media (min-width: $mq-sm) {
+  #cursor {
+    position: absolute;
+    z-index: 999;
+    pointer-events: none;
+    top: calc(var(--mouse-y) - 0.5em);
+    left: calc(var(--mouse-x) - 0.5em);
+    @include invert;
+    &.prev {
+      &:before {
+        content: '\2190';
+      }
+    }
+    &.next {
+      &:before {
+        content: '\2192';
+      }
+    }
+    &.zoom {
+      &:before {
+        content: '+';
+      }
+    }
+    &.zoom-out {
+      &:before {
+        content: '\2014';
+      }
     }
   }
-  &.next {
-    &:before {
-      content: '\2192';
-    }
+  .customcursor {
+    cursor: none !important;
   }
 }

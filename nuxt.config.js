@@ -52,7 +52,7 @@ export default {
   plugins: [
     '~/plugins/mapOrder.js',
     '~/plugins/surround.js',
-    '~/plugins/animateOnScroll.client.js',
+    // '~/plugins/animateOnScroll.client.js',
     '~/plugins/customCursor.client.js',
   ],
 

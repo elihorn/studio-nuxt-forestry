@@ -1,11 +1,6 @@
 <template>
   <ul class="post-list layout-offset">
-    <li
-      v-for="(post, index) in posts"
-      :key="post.slug"
-      v-animate-on-scroll
-      class="post"
-    >
+    <li v-for="(post, index) in posts" :key="post.slug" class="post">
       <nuxt-link
         :to="{ name: name + '-slug-media', params: { slug: post.slug } }"
         :class="[{ active: activePost === post }, `post-link`]"

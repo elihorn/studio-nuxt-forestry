@@ -23,12 +23,12 @@
   .post-body {
     @include sidebar;
     padding: $margin-col 0;
-    // white-space: nowrap;
   }
   @media (min-width: $mq-sm) {
     .post-body {
       padding: $margin-col * 2;
       bottom: 0;
+      white-space: nowrap;
     }
   }
 }

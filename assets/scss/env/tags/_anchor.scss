@@ -1,4 +1,6 @@
-a {
+a,
+.link {
+  cursor: pointer;
   color: currentColor;
   text-decoration: underline;
   text-decoration-skip-ink: auto;
@@ -10,21 +12,15 @@ a {
   &:focus,
   &:active,
   &:hover {
-    color: var(--color-hov);
     outline: 0;
   }
-
-  &.nuxt-link-exact-active {
-    cursor: default;
-  }
-}
-
-.link {
-  cursor: pointer;
-  &:focus,
   &:active,
   &:hover {
     color: var(--color-hov);
     outline: 0;
+  }
+  &.nuxt-link-exact-active {
+    cursor: default;
+    color: var(--color-fg);
   }
 }

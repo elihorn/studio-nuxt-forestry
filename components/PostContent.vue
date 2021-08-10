@@ -1,7 +1,12 @@
 <template>
   <div class="post">
     <div class="post-media">
-      <figure :class="{ zoom: zoom }" @click="zoomImage">
+      <figure
+        :key="zoomDir"
+        v-custom-cursor="zoomDir"
+        :class="{ zoom: zoom }"
+        @click="zoomImage"
+      >
         <svg class="svgFilter">
           <filter id="sharpBlur">
             <feGaussianBlur stdDeviation="13"></feGaussianBlur>
@@ -72,6 +77,7 @@ export default {
       current: parseInt(this.$route.params.media) || 0,
       zoom: false,
       zoomLoaded: false,
+      zoomDir: 'zoom',
     };
   },
   beforeMount() {
@@ -93,6 +99,7 @@ export default {
         this.loadZoom();
       }
       this.zoom = !this.zoom;
+      this.zoomDir = this.zoom ? 'zoom-out' : 'zoom';
     },
     loadZoom() {
       const img = new Image();
