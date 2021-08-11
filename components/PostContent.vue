@@ -7,27 +7,17 @@
         :class="{ zoom: zoom }"
         @click="zoomImage"
       >
-        <svg class="svgFilter">
-          <filter id="sharpBlur">
-            <feGaussianBlur stdDeviation="13"></feGaussianBlur>
-            <feColorMatrix
-              type="matrix"
-              values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 9 0"
-            ></feColorMatrix>
-            <feComposite in2="SourceGraphic" operator="in"></feComposite>
-          </filter>
-        </svg>
         <nuxt-img
           :src="post.media[current].file"
-          width="50"
+          width="20"
           fit="contain"
-          class="svgBlur placeholder"
-          quality="50"
+          class="placeholder"
+          quality="1"
           format="webp"
-          loading="lazy"
         />
         <nuxt-img
           v-if="!zoom"
+          v-on-load
           :src="post.media[current].file"
           :alt="post.title"
           sizes="md:100vw sm:100vw xs:100vw"

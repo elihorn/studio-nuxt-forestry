@@ -9,6 +9,7 @@
       >
         <div class="post-media">
           <nuxt-img
+            v-on-load
             :src="post.image"
             :alt="post.title"
             sizes="md:100vw sm:100vw xs:100vw"

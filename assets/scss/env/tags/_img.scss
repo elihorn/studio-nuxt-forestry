@@ -5,6 +5,13 @@ img {
   display: block;
   border: none;
   box-shadow: none;
+  &[data-loaded='false'] {
+    opacity: 0;
+  }
+  &[data-loaded='true'] {
+    opacity: 1;
+    transition: opacity ease-in-out 300ms;
+  }
 }
 
 /* SVG filter for blurring placeholder images */

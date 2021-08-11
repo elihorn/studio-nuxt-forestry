@@ -54,6 +54,7 @@ export default {
     '~/plugins/surround.js',
     // '~/plugins/animateOnScroll.client.js',
     '~/plugins/customCursor.client.js',
+    '~/plugins/onLoad.client.js',
   ],
 
   /*

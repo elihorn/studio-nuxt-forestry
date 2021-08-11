@@ -2,6 +2,7 @@
   .layout-offset {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: $margin-page * 5 0;
     .post {
       &:not(:last-child)::before {
         content: '';
