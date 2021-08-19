@@ -5,6 +5,7 @@
     pointer-events: none;
     top: calc(var(--mouse-y) - 0.5em);
     left: calc(var(--mouse-x) - 0.5em);
+    font-size: 2rem;
     @include invert;
     &.prev {
       &:before {
@@ -29,5 +30,10 @@
   }
   .customcursor {
     cursor: none !important;
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: none !important;
+    }
   }
 }

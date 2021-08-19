@@ -5,6 +5,7 @@ img {
   display: block;
   border: none;
   box-shadow: none;
+  pointer-events: none;
   &[data-loaded='false'] {
     opacity: 0;
   }

@@ -7,6 +7,7 @@ body {
   font-synthesis: none;
   font-stretch: normal;
   font-variant: no-common-ligatures proportional-nums slashed-zero;
+  font-feature-settings: 'liga', 'calt';
   font-kerning: normal;
   text-rendering: geometricPrecision; /* Why not: text-rendering: optimizeSpeed;?… in light of PWA. */
   font-display: swap;

@@ -72,12 +72,12 @@ $small: 0.8em;
 @import './app/components/customcursor';
 
 $fonts: (
-  1: 'Bradford Trial',
-  2: 'Bradford Mono Trial',
+  1: 'Kozuka Mincho Pro',
+  2: 'New York Medium',
   3: 'Suisse Works',
-  4: 'SF Pro Display',
-  5: 'Untitled Serif Test',
-  6: 'Untitled Sans Test',
+  4: 'Theinhardt',
+  5: 'Stanley',
+  6: 'Maison Neue',
   7: 'Post Grotesk',
 );
 @function font($font) {
@@ -92,10 +92,10 @@ $fonts: (
   /*Font familia */
   --font: #{font(3)}, monospace;
   --font-weight: 400;
-  --font-2: #{font(3)};
+  --font-2: var(--font);
 
   --font-size: 14px;
-  --line-height: 1.3;
+  --line-height: 1.2;
 
   --color-fg: #006f6f;
   --color-fg-inv: #ff9090;

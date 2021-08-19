@@ -12,7 +12,7 @@
         </li>
         <li class="nav-link-works">
           <nuxt-link
-            :class="{ 'nuxt-link-active': $route.name == 'index' }"
+            :class="{ 'exact-active': $route.name == 'index' }"
             to="/works"
           >
             Selected work

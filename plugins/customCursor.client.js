@@ -4,8 +4,8 @@ Vue.directive('custom-cursor', {
   bind(el, binding, vnode) {
     const { value = '' } = binding;
     const store = vnode.context.$store;
+    el.classList.add('customcursor');
     hover = function (t, cursor) {
-      t.classList.add('customcursor');
       store.commit('cursor/add', cursor);
     };
     el.addEventListener('mouseenter', (e) => {
