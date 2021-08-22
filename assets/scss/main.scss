@@ -71,17 +71,27 @@ $small: 0.8em;
 @import './app/components/nextprev';
 @import './app/components/customcursor';
 
-$fonts: (
-  1: 'Kozuka Mincho Pro',
-  2: 'New York Medium',
-  3: 'Suisse Works',
-  4: 'Theinhardt',
-  5: 'Stanley',
-  6: 'Maison Neue',
-  7: 'Post Grotesk',
-);
-@function font($font) {
-  @return map-get($fonts, $font);
+@font-face {
+  font-family: 'Suisse Works';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('~assets/fonts/SuisseWorks-Regular-WebXL.woff2') format('woff2'),
+    /* Super Modern Browsers */
+      url('~assets/fonts/SuisseWorks-Regular-WebXL.woff') format('woff'),
+    /* Pretty Modern Browsers */
+      url('~assets/fonts/SuisseWorks-Regular-WebXL.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Suisse Works';
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url('~assets/fonts/SuisseWorks-RegularItalic-WebS.woff2') format('woff2'),
+    /* Super Modern Browsers */
+      url('~assets/fonts/SuisseWorks-RegularItalic-WebS.woff') format('woff'),
+    /* Pretty Modern Browsers */
+      url('~assets/fonts/SuisseWorks-RegularItalic-WebS.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 
 /* Global variables below */
@@ -90,7 +100,7 @@ $fonts: (
   --bu: calc(0.5vw);
 
   /*Font familia */
-  --font: #{font(3)}, monospace;
+  --font: 'Suisse Works', serif;
   --font-weight: 400;
   --font-2: var(--font);
 

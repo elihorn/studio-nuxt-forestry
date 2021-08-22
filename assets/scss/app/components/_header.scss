@@ -31,14 +31,14 @@
           }
         }
       }
-      .nuxt-link-active,
-      .exact-active {
-        padding-left: 1em;
+      .nuxt-link-exact-active:hover {
+        color: var(--color-fg-inv);
       }
       .nuxt-link-active:not(.nuxt-link-exact-active),
       .close {
         position: relative;
         display: block;
+        padding-left: 1em;
         &:before {
           content: '\21B0';
           position: absolute;
