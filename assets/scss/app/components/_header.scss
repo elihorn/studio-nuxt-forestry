@@ -34,17 +34,30 @@
       .nuxt-link-exact-active:hover {
         color: var(--color-fg-inv);
       }
+      .nuxt-link-active,
+      .nuxt-link-exact-active {
+        font-style: italic;
+      }
+      .nav-link-info {
+        .exact-active {
+          text-indent: -9999px;
+          position: relative;
+          display: block;
+          padding-left: 1em;
+          &:before {
+            text-indent: 0;
+            content: '\21B0';
+            font-style: normal;
+            position: absolute;
+            width: $margin-col * 2;
+            left: 0;
+            top: calc(var(--line-height) * -0.25em);
+          }
+        }
+      }
       .nuxt-link-active:not(.nuxt-link-exact-active),
       .close {
-        position: relative;
-        display: block;
-        padding-left: 1em;
         &:before {
-          content: '\21B0';
-          position: absolute;
-          width: $margin-col * 2;
-          left: 0;
-          top: calc(var(--line-height) * -0.25em);
         }
       }
       &:hover {
