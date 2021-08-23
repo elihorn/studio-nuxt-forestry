@@ -30,7 +30,8 @@
     "nuxt": "^2.15.7",
     "prettier": "^2.3.2",
     "sass-loader": "^10.1.1",
-    "vue-scroll-behavior": "^0.3.0"
+    "vue-scroll-behavior": "^0.3.0",
+    "vue2-touch-events": "^3.2.2"
   },
   "devDependencies": {}
 }

@@ -54,6 +54,7 @@ export default {
     // '~/plugins/animateOnScroll.client.js',
     '~/plugins/customCursor.client.js',
     '~/plugins/onLoad.client.js',
+    '~/plugins/vueTouch.js',
   ],
 
   /*

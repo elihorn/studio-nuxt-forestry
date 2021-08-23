@@ -3,6 +3,7 @@
     <nuxt-link
       v-if="prevParams"
       v-custom-cursor="'prev'"
+      v-touch:swipe="swipeHandler"
       :to="{
         name: routeName,
         params: prevParams,
@@ -14,6 +15,7 @@
     <nuxt-link
       v-if="nextParams"
       v-custom-cursor="'next'"
+      v-touch:swipe="swipeHandler"
       :to="{ name: routeName, params: nextParams }"
       class="next"
     >
@@ -93,10 +95,8 @@ export default {
   methods: {
     keyPress(e) {
       if (e.keyCode === 37) {
-        // Previous page
         this.$router.push({ name: this.routeName, params: this.prevParams });
       } else if (e.keyCode === 39) {
-        // Next page
         this.$router.push({ name: this.routeName, params: this.nextParams });
       } else if (e.keyCode === 27) {
         const routePath =
@@ -104,6 +104,13 @@ export default {
         this.$router.push({
           path: routePath.substring(0, routePath.lastIndexOf('/')),
         });
+      }
+    },
+    swipeHandler(direction) {
+      if (direction === 'right') {
+        this.$router.push({ name: this.routeName, params: this.prevParams });
+      } else if (direction === 'left') {
+        this.$router.push({ name: this.routeName, params: this.nextParams });
       }
     },
   },
