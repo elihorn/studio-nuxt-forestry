@@ -1,6 +1,10 @@
 <template>
   <article id="content" class="page">
-    <nuxt-content :document="post" />
+    <div class="post">
+      <div class="post-body">
+        <nuxt-content :document="post" />
+      </div>
+    </div>
   </article>
 </template>
 <script>

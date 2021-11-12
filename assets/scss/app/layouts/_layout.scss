@@ -1,4 +1,9 @@
 /* Structure */
+#__nuxt,
+#layout,
+#page {
+  min-height: 100%;
+}
 #page {
   @media (min-width: $mq-sm) {
     display: flex;
@@ -13,7 +18,7 @@
 #content {
   @include main;
   position: relative;
-  padding: 0 $margin-page;
+  padding: 0 $margin-page * 2;
   @media (min-width: $mq-sm) {
     padding: $margin-page;
   }

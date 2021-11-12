@@ -1,11 +1,8 @@
 #content.page {
-  padding: $margin-page * 2 $margin-page * 2 $margin-page * 2 $sidebar-width;
   .nuxt-content {
-    max-width: 25em;
-    // font-size: 1.5em;
-    // font-weight: 400;
-    p:first-child {
-      //   text-indent: $sidebar-width * -1 + $margin-page * 2;
+    white-space: normal;
+    @media (min-width: $mq-sm) {
+      width: 25em;
     }
   }
 }
