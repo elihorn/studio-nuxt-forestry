@@ -4,6 +4,9 @@
   "description": "Selected work of artist and designer Eli Horn",
   "author": "Eli Horn",
   "private": true,
+  "engines": {
+    "node": "^16.15.0"
+  },
   "scripts": {
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "dev": "nuxt dev",
@@ -25,11 +28,11 @@
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.4.0",
     "frontmatter-markdown-loader": "^3.6.3",
-    "node-sass": "^6.0.1",
     "nodemon": "^2.0.12",
     "nuxt": "^2.15.7",
     "prettier": "^2.3.2",
-    "sass-loader": "^10.1.1",
+    "sass": "^1.52.1",
+    "sass-loader": "^10",
     "vue-scroll-behavior": "^0.3.0",
     "vue2-touch-events": "^3.2.2"
   },
