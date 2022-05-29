@@ -18,6 +18,7 @@
             quality="90"
             format="webp"
             :loading="index > 2 ? 'lazy' : null"
+            provider="static"
           />
         </div>
         <div class="post-body">

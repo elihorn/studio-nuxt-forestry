@@ -1,10 +1,8 @@
-/* Layout */
 $mq-sm: 40rem;
 $margin-page: 0.5em;
 $margin-col: 0.5em;
 $sidebar-width: 10em;
 $small: 0.8em;
-
 /* Mixins */
 @mixin invert {
   mix-blend-mode: difference;
@@ -19,8 +17,10 @@ $small: 0.8em;
     }
   }
 }
+
 @mixin sidebar {
   width: 100%;
+
   @media (min-width: $mq-sm) {
     position: fixed;
     left: 0;
@@ -30,8 +30,10 @@ $small: 0.8em;
     @include invert;
   }
 }
+
 @mixin main {
   width: 100%;
+
   @media (min-width: $mq-sm) {
     width: 100%;
     order: 2;
@@ -80,8 +82,10 @@ $small: 0.8em;
     /* Super Modern Browsers */
       url('~assets/fonts/SuisseWorks-Regular-WebXL.woff') format('woff'),
     /* Pretty Modern Browsers */
-      url('~assets/fonts/SuisseWorks-Regular-WebXL.ttf') format('truetype'); /* Safari, Android, iOS */
+      url('~assets/fonts/SuisseWorks-Regular-WebXL.ttf') format('truetype');
+  /* Safari, Android, iOS */
 }
+
 @font-face {
   font-family: 'Suisse Works';
   font-style: italic;
@@ -91,7 +95,8 @@ $small: 0.8em;
     /* Super Modern Browsers */
       url('~assets/fonts/SuisseWorks-RegularItalic-WebS.woff') format('woff'),
     /* Pretty Modern Browsers */
-      url('~assets/fonts/SuisseWorks-RegularItalic-WebS.ttf') format('truetype'); /* Safari, Android, iOS */
+      url('~assets/fonts/SuisseWorks-RegularItalic-WebS.ttf') format('truetype');
+  /* Safari, Android, iOS */
 }
 
 /* Global variables below */

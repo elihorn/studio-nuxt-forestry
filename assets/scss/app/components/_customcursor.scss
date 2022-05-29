@@ -1,6 +1,6 @@
 @media (min-width: $mq-sm) {
   #cursor {
-    position: absolute;
+    position: fixed;
     z-index: 999;
     pointer-events: none;
     top: calc(var(--mouse-y) - 0.5em);

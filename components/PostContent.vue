@@ -4,7 +4,7 @@
       <figure
         :key="zoomDir"
         v-custom-cursor="zoomDir"
-        :class="{ zoom: zoom }"
+        :class="{ zoom: zoom, zoomable: zoomable }"
         @click="zoomImage"
       >
         <nuxt-img
@@ -16,13 +16,13 @@
           format="webp"
         />
         <nuxt-img
-          v-if="!zoom"
           v-on-load
           :src="post.media[current].file"
           :alt="post.title"
-          sizes="md:100vw sm:100vw xs:100vw"
-          fit="contain"
+          sizes="lg:1000px md:100vw sm:100vw xs:100vw"
+          id="post-image"
           class="scaled"
+          ref="postImage"
           quality="90"
           format="webp"
         />
@@ -66,8 +66,9 @@ export default {
       api_url: process.env.strapiBaseUri + '/',
       current: parseInt(this.$route.params.media) || 0,
       zoom: false,
-      zoomLoaded: false,
-      zoomDir: 'zoom',
+      zoomable: false,
+      zoomDir: false,
+      zoomedImage: false,
     };
   },
   beforeMount() {
@@ -83,20 +84,43 @@ export default {
       );
     });
   },
+  mounted() {
+    this.zoomedImage = new Image();
+    const t = this;
+    this.zoomedImage.onload = function () {
+      t.isZoomable();
+    };
+    this.zoomedImage.src = this.api_url + this.post.media[this.current].file;
+    this.isZoomable();
+    this.$nextTick(function () {
+      this.onResize();
+    });
+    window.addEventListener('resize', this.onResize);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize);
+  },
   methods: {
     zoomImage() {
-      if (!this.zoom && !this.zoomLoaded) {
-        this.loadZoom();
+      if (this.zoomable) {
+        this.zoom = !this.zoom;
+        this.zoomDir = this.zoom ? 'zoom-out' : 'zoom';
+      } else {
+        this.zoomDir = false;
       }
-      this.zoom = !this.zoom;
-      this.zoomDir = this.zoom ? 'zoom-out' : 'zoom';
     },
-    loadZoom() {
-      const img = new Image();
-      img.onload = function () {
-        this.zoomLoaded = true;
-      };
-      img.src = this.api_url + this.post.media[this.current].file;
+    isZoomable() {
+      const imageHeight = this.$refs.postImage.$el.clientHeight;
+      this.zoomable = this.zoomedImage.height > imageHeight * 1.1;
+      if (!this.zoomable) {
+        this.zoomDir = false;
+        this.zoom = false;
+      } else if (!this.zoomDir) {
+        this.zoomDir = this.zoom ? 'zoom-out' : 'zoom';
+      }
+    },
+    onResize() {
+      this.isZoomable();
     },
   },
 };
