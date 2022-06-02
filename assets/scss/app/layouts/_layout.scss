@@ -2,11 +2,12 @@
 #__nuxt,
 #layout,
 #page {
-  min-height: 100%;
+  min-height: 100vh;
 }
 #page {
+  display: flex;
+  flex-direction: column;
   @media (min-width: $mq-sm) {
-    display: flex;
     flex-direction: row;
   }
 }
@@ -19,6 +20,9 @@
   @include main;
   position: relative;
   padding: 0 $margin-page * 2;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   @media (min-width: $mq-sm) {
     padding: $margin-page;
   }
@@ -27,12 +31,12 @@
 #content {
   .post-body {
     @include sidebar;
-    padding: $margin-col 0;
+    padding: $margin-col * 2 0;
+    bottom: 0;
   }
   @media (min-width: $mq-sm) {
     .post-body {
       padding: $margin-col * 2;
-      bottom: 0;
       white-space: nowrap;
     }
   }

@@ -1,6 +1,15 @@
 #content.slug {
+  .post {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
   .post-media {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
     figure {
       z-index: 2;
       position: relative;
@@ -15,8 +24,14 @@
           position: absolute;
           z-index: 0;
         }
+        &.unscaled {
+          display: none;
+        }
       }
     }
+  }
+  .post-body {
+    margin-bottom: auto;
   }
   @media (min-width: $mq-sm) {
     padding: $margin-page * 3;
@@ -67,6 +82,9 @@
             height: auto;
             left: 50%;
             top: 50%;
+          }
+          .unscaled {
+            display: block;
           }
           img {
             pointer-events: none;
