@@ -1,12 +1,12 @@
 ---
 title: Container
 slug: container
-image: uploads/Eli-Horn_Container_001.jpg
+image: uploads/Eli-Horn_Container_1.0.jpg
 media:
-  - file: uploads/Eli-Horn_Container_001.jpg
-  - file: uploads/Eli-Horn_Container_002.jpg
-  - file: uploads/Eli-Horn_Container_003.jpg
-  - file: uploads/Eli-Horn_Container_004.jpg
+  - file: uploads/Eli-Horn_Container_1.0.jpg
+  - file: uploads/Eli-Horn_Container_2.0.jpg
+  - file: uploads/Eli-Horn_Container_3.0.jpg
+  - file: uploads/Eli-Horn_Container_4.0.jpg
 ---
 
 Risograph print on paper  

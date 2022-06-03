@@ -1,9 +1,9 @@
 ---
 title: Trials 1
 slug: trials-1
-image: uploads/trials-b_med2.jpg
+image: uploads/Eli-Horn_Trials_1.0.jpg
 media:
-  - file: uploads/trials-b_med2.jpg
+  - file: uploads/Eli-Horn_Trials_1.0.jpg
 ---
 
 Mixed media on paper  

@@ -1,15 +1,15 @@
 ---
 title: Psychic Interior
 slug: psychic-interior
-image: uploads/Eli-Horn_Psychic-Interior_001.jpg
+image: uploads/Eli-Horn_Psychic-Interior_1.0_cropped.jpg
 media:
-  - file: uploads/Eli-Horn_Psychic-Interior_001.jpg
-  - file: uploads/Eli-Horn_Psychic-Interior_002.jpg
-  - file: uploads/Eli-Horn_Psychic-Interior_003.jpg
-  - file: uploads/Eli-Horn_Psychic-Interior_004.jpg
-  - file: uploads/Eli-Horn_Psychic-Interior_005.jpg
-  - file: uploads/Eli-Horn_Psychic-Interior_006.jpg
-  - file: uploads/Eli-Horn_Psychic-Interior_007.jpg
+  - file: uploads/Eli-Horn_Psychic-Interior_1.0_cropped.jpg
+  - file: uploads/Eli-Horn_Psychic-Interior_2.0_cropped.jpg
+  - file: uploads/Eli-Horn_Psychic-Interior_3.0_cropped.jpg
+  - file: uploads/Eli-Horn_Psychic-Interior_4.0_cropped.jpg
+  - file: uploads/Eli-Horn_Psychic-Interior_5.0_cropped.jpg
+  - file: uploads/Eli-Horn_Psychic-Interior_6.0_cropped.jpg
+  - file: uploads/Eli-Horn_Psychic-Interior_7.0_cropped.jpg
 ---
 
 Pencil on paper  
