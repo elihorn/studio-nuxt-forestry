@@ -4,7 +4,11 @@ slug: annoukis
 image: uploads/ann_ss18-6.jpg
 pages:
 - template: slide
-  content: []
+  content:
+  - template: media
+    file: uploads/doc_ann_001.jpg
+    title: ''
+    caption: ''
   title: ''
 - template: slide
   content:
