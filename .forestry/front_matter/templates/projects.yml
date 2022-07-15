@@ -18,17 +18,17 @@ fields:
   config:
     maxSize: 64
   label: Image
-- name: media
+- name: folder
   type: field_group_list
   fields:
-  - name: item
+  - name: file
     type: include
     config: {}
     template: media
-    label: Item
+    label: File
     description: Test
   config:
     min: 
     max: 
     labelField: title
-  label: Media
+  label: Folder
