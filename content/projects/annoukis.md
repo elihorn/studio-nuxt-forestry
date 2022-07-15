@@ -5,6 +5,7 @@ image: uploads/ann_ss18-6.jpg
 pages:
 - template: slide
   content: []
+  title: ''
 - template: slide
   content:
   - template: media
@@ -15,5 +16,6 @@ pages:
     file: uploads/ann_10-01_04-0.jpg
     title: ''
     caption: ''
+  title: Photo (2)
 
 ---
