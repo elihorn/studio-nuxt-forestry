@@ -18,7 +18,7 @@ fields:
   config:
     maxSize: 64
   label: Image
-- name: page
+- name: pages
   type: blocks
   label: Pages
   template_types:
