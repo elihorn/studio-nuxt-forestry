@@ -22,8 +22,8 @@ fields:
   type: blocks
   label: Pages
   template_types:
-  - media
   - page
+  - slide
   config:
     min: 
     max: 
