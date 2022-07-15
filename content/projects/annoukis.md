@@ -9,7 +9,7 @@ pages:
     file: uploads/doc_ann_001.jpg
     title: ''
     caption: ''
-  title: ''
+  title: Business cards
 - template: slide
   content:
   - template: media
