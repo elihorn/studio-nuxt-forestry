@@ -27,3 +27,5 @@ fields:
   config:
     min: 
     max: 
+pages:
+- content/projects/annoukis.md
