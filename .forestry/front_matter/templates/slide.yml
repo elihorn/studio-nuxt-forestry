@@ -1,4 +1,12 @@
 ---
 label: Slide
 hide_body: true
-fields: []
+fields:
+- name: content
+  type: blocks
+  label: Content
+  template_types:
+  - media
+  config:
+    min: 
+    max: 
