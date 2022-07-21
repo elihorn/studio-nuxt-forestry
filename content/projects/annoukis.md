@@ -20,6 +20,6 @@ pages:
     file: uploads/ann_10-01_04-0.jpg
     title: ''
     caption: ''
-  title: Photo (2)
+  title: Photos
 
 ---
