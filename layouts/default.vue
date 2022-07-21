@@ -1,8 +1,8 @@
 <template>
   <div id="page">
-    <Header />
+    <TheHeader />
     <Nuxt />
-    <CustomCursor />
+    <TheCustomCursor />
   </div>
 </template>
 

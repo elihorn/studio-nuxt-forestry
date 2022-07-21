@@ -53,7 +53,7 @@ export default {
   },
   data() {
     return {
-      current: parseInt(this.$route.params.media) || 0,
+      current: parseInt(this.$route.params.id) || 0,
       prevText: 'Previous',
       nextText: 'Next',
       prevParams: false,
@@ -74,17 +74,17 @@ export default {
     if (this.current > 1) {
       this.prevParams = {
         slug: this.post.slug,
-        media: this.current - 1,
+        id: this.current - 1,
       };
     } else if (this.current > 0) {
       this.prevParams = { slug: this.post.slug };
     } else if (this.prev && this.prevCount > 0) {
-      this.prevParams = { slug: this.prev.slug, media: this.prevCount };
+      this.prevParams = { slug: this.prev.slug, id: this.prevCount };
     }
     if (this.current < this.count - 1) {
       this.nextParams = {
         slug: this.post.slug,
-        media: this.current + 1,
+        id: this.current + 1,
       };
     }
     window.addEventListener('keyup', this.keyPress);

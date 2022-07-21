@@ -1,6 +1,12 @@
 /* eslint-disable */
+import path from 'path';
+const glob = require('glob');
 const config = require('./content/data/config.json');
 const routes = require('./static/routes.json');
+const dynamicRoutes = getDynamicPaths({
+  '/works': 'content/works/*.md',
+  '/projects': 'content/projects/*.md',
+});
 /* eslin-enable */
 const dev =
   process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test';
@@ -12,23 +18,8 @@ export default {
   target: 'static',
   modern: dev ? false : 'client',
   generate: {
-    async routes() {
-      const { $content } = require('@nuxt/content');
-      const works = await $content('works').only(['path', 'media']).fetch();
-      const workMedia = [];
-      works.forEach((work) => {
-        if (work.media?.length > 1) {
-          work.media.slice(1).forEach((e, i) => {
-            workMedia.push(work.path + '/' + (i + 1));
-          });
-        }
-      });
-      return workMedia;
-    },
+    routes: dynamicRoutes,
   },
-  /*
-   ** Headers of the page
-   */
   head: {
     title: config.title || '',
     meta: [
@@ -71,7 +62,8 @@ export default {
    */
   modules: ['@nuxt/content', '@nuxt/image'],
   content: {
-    nestedProperties: ['works.slug.media'],
+    nestedProperties: ['works.slug.id'],
+    nestedProperties: ['projects.slug.id'],
   },
   image: {
     screens: {
@@ -85,3 +77,14 @@ export default {
     },
   },
 };
+function getDynamicPaths(urlFilepathTable) {
+  return [].concat(
+    ...Object.keys(urlFilepathTable).map((url) => {
+      const filepathGlob = urlFilepathTable[url];
+      const routes = glob
+        .sync(filepathGlob)
+        .map((filepath) => `${url}/${path.basename(filepath, '.md')}`);
+      return routes;
+    })
+  );
+}

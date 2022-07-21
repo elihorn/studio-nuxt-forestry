@@ -1,8 +1,8 @@
 <template>
   <article id="content" class="slug">
-    <PostContent :key="$route.params.media" :post="post" />
+    <PostContent :key="$route.params.id" :post="post" />
     <prev-next
-      :key="$route.params.media"
+      :key="$route.params.id"
       :next="next"
       :prev="prev"
       :count="post.media.length"
@@ -17,7 +17,7 @@ export default {
   async asyncData({ app, $content, params, error, route, store }) {
     try {
       const name = 'works';
-      const routeName = 'works-slug-media';
+      const routeName = 'works-slug-id';
       const posts = await $content(name).only(['title', 'slug']).fetch();
       const { index } = await $content('data/indexes/' + name + '-index')
         .only('index')

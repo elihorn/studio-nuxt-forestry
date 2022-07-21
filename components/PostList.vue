@@ -2,7 +2,7 @@
   <ul class="post-list layout-offset">
     <li v-for="(post, index) in posts" :key="post.slug" class="post">
       <nuxt-link
-        :to="{ name: name + '-slug-media', params: { slug: post.slug } }"
+        :to="{ name: name + '-slug-id', params: { slug: post.slug } }"
         :class="[{ active: activePost === post }, `post-link`]"
         @click.native="activePost = post"
         @mouseover.native="activePost = post"

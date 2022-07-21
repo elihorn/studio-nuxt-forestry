@@ -3,12 +3,8 @@
     <nav>
       <ul class="menu">
         <li class="nav-link-info">
-          <nuxt-link v-if="$route.name != 'info'" to="/info">
-            Eli Horn
-          </nuxt-link>
-          <span v-else class="link close exact-active" @click="to">
-            Eli Horn
-          </span>
+          <nuxt-link v-if="$route.name != 'info'" to="/info">Memory</nuxt-link>
+          <span v-else class="link close exact-active" @click="to">Memory</span>
         </li>
         <li class="nav-link-works">
           <nuxt-link
@@ -16,6 +12,14 @@
             to="/works"
           >
             Selected work
+          </nuxt-link>
+        </li>
+        <li class="nav-link-projects">
+          <nuxt-link
+            :class="{ 'nuxt-link-exact-active': $route.name == 'index' }"
+            to="/projects"
+          >
+            Projects
           </nuxt-link>
         </li>
         <!-- <li class="nav-link-index">
