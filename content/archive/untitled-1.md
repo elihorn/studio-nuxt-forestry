@@ -2,8 +2,11 @@
 title: Untitled
 slug: untitled-1
 image: uploads/Eli-Horn_Untitled.jpg
-media:
-  - file: uploads/Eli-Horn_Untitled.jpg
+pages:
+  - template: slide
+    content:
+      - template: image
+        file: uploads/Eli-Horn_Untitled.jpg
 ---
 
 Pencil on paper  

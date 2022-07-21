@@ -2,11 +2,17 @@
 title: Relief
 slug: relief
 image: uploads/Eli-Horn_Relief_1.0.jpg
-media:
-  - file: uploads/Eli-Horn_Relief_1.0.jpg
-  - file: uploads/Eli-Horn_Relief-Study_1.0.jpg
-    title: Relief study
-    caption: Pencil on paper
+pages:
+  - template: slide
+    content:
+      - template: image
+        file: uploads/Eli-Horn_Relief_1.0.jpg
+  - template: slide
+    content:
+      - template: image
+        file: uploads/Eli-Horn_Relief-Study_1.0.jpg
+        title: Relief study
+        caption: Pencil on paper
 ---
 
 Etching on paper  
